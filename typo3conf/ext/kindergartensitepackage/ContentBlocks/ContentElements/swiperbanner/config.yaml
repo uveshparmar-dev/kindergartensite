@@ -1,0 +1,32 @@
+name: net2typo/swiperbanner
+typeName: net2typo_swiperbanner
+group: default
+prefixFields: true
+prefixType: full
+
+fields:
+  -
+    identifier: header
+    useExistingField: true
+  -
+    identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+  -
+    identifier: image
+    useExistingField: true
+    override:
+      maxitems: 10
+  -
+    identifier: subheader
+    useExistingField: true
+    label: Button Text
+  -
+    identifier: header_link
+    useExistingField: true
+    label: Button Link
+  -
+    identifier: floating_icons_images
+    type: File
+    label: Floating Image
+    maxitems: 10

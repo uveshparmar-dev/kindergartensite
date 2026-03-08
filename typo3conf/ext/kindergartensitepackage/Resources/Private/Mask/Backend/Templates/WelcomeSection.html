@@ -1,0 +1,67 @@
+<f:if condition="{data}">
+
+    <div class="mask-backend-preview">
+
+        <strong>About Us Section</strong>
+        <hr>
+
+        <!-- MAIN IMAGE PREVIEW -->
+        <f:if condition="{data.tx_mask_main}">
+            <strong>Main Image(s):</strong>
+            {data.tx_mask_main -> f:count()}
+            <br><br>
+
+            <div style="display:flex; gap:10px; margin-bottom:15px;">
+                <f:for each="{data.tx_mask_main}" as="file">
+                    <div style="
+                        width:90px;
+                        height:90px;
+                        border:1px solid #ddd;
+                        border-radius:50%;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        background:#fafafa;
+                    ">
+                        <f:media
+                            file="{file}"
+                            width="80"
+                            height="80"
+                            alt="{file.alternative}"
+                        />
+                    </div>
+                </f:for>
+            </div>
+        </f:if>
+
+        <!-- HEADING -->
+        <f:if condition="{data.tx_mask_heading}">
+            <strong>Heading:</strong>
+            <f:format.stripTags>
+                {data.tx_mask_heading}
+            </f:format.stripTags>
+            <br><br>
+        </f:if>
+
+        <!-- DESCRIPTION -->
+        <f:if condition="{data.tx_mask_input}">
+            <strong>Description:</strong>
+            <div style="max-width:700px;">
+                <f:format.stripTags>
+                    {data.tx_mask_input}
+                </f:format.stripTags>
+            </div>
+            <br>
+        </f:if>
+
+        <!-- BUTTON INFO -->
+        <strong>Button:</strong> “About Us” (static link)
+        <br>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{data} == 0">
+    <em>No About Us content added yet.</em>
+</f:if>

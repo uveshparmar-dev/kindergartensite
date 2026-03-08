@@ -1,0 +1,37 @@
+<section id="gallery">
+    <div class="padding-medium pt-0">
+
+        <f:if condition="{data.tx_mask_gallery}">
+            <h2 class="display-4 text-center mb-5">
+                {data.tx_mask_gallery -> f:format.raw()}
+            </h2>
+        </f:if>
+
+        <!-- Masonry Container -->
+        <div class="row entry-container" id="masonry-gallery">
+
+            <f:for each="{data.tx_mask_gallery_image}" as="file">
+                <div class="entry-item col-md-4 my-3 gallery-item">
+                    <a href="{file.publicUrl}" class="image-link" title="{file.description}">
+                        <img src="{file.publicUrl}" class="post-image img-fluid rounded-4" alt="">
+                    </a>
+                </div>
+            </f:for>
+
+        </div>
+
+        <div class="text-center">
+            <f:if condition="{data.tx_mask_gallery_link}">
+                <f:link.typolink parameter="{data.tx_mask_gallery_link}" class="btn btn-primary mt-4">
+                    View Gallery
+                </f:link.typolink>
+            </f:if>
+
+            <f:if condition="!{data.tx_mask_gallery_link}">
+                <a href="#" class="btn btn-primary mt-4">View Gallery</a>
+            </f:if>
+        </div>
+
+
+    </div>
+</section>

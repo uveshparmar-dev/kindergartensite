@@ -1,0 +1,38 @@
+name: net2typo/classes
+typeName: net2typo_classes
+group: default
+prefixFields: true
+prefixType: full
+
+fields:
+  - identifier: header
+    type: Text
+    label: Section Heading
+
+  - identifier: classes
+    type: Collection
+    label: Classes
+    appearance:
+      collapseAll: true
+    fields:
+
+      - identifier: title
+        type: Text
+        label: Class Title
+
+      - identifier: image
+        type: File
+        label: Class Image
+        maxitems: 1
+
+      - identifier: age
+        type: Text
+        label: Age Range 
+
+      - identifier: class_size
+        type: Text
+        label: Class Size
+
+      - identifier: price
+        type: Text
+        label: Price 

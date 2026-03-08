@@ -1,0 +1,72 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="cb-keyfeature-preview" style="padding:10px;">
+    <be:link.editRecord uid="{data.uid}" table="tt_content">
+        <h3 style="margin-bottom:10px;">Key Features</h3>
+    </be:link.editRecord>
+
+    <p><strong>Total Items:</strong>
+        {data.net2typo_keyfeature_keyfeature -> f:count()}
+    </p>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+
+        <thead>
+            <tr style="text-align:left; border-bottom:1px solid #ccc;">
+                <th style="padding:8px;">Icon</th>
+                <th style="padding:8px;">Title</th>
+                <th style="padding:8px;">Background Color</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <f:for each="{data.net2typo_keyfeature_keyfeature}" as="item">
+
+                <tr style="border-bottom:1px solid #eee;">
+
+                    <!-- ICON -->
+                    <td style="padding:12px;">
+                        <be:link.editRecord uid="{data.uid}" table="tt_content">
+                            <f:if condition="{item.image.0}">
+                                <div style="
+                                width:60px;
+                                height:60px;
+                                border-radius:50%;
+                                background-color:{item.background_color};
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                            ">
+                                    <f:image image="{item.image.0}" width="30" height="30" />
+                                </div>
+                            </f:if>
+                        </be:link.editRecord>
+                    </td>
+
+                    <!-- TITLE -->
+                    <td style="padding:12px;">
+                        <be:link.editRecord uid="{data.uid}" table="tt_content">
+                            {item.header}
+                        </be:link.editRecord>
+                    </td>
+
+                    <!-- COLOR VALUE -->
+                    <td style="padding:12px;">
+                        <be:link.editRecord uid="{data.uid}" table="tt_content">
+                            {item.background_color}
+                        </be:link.editRecord>
+                    </td>
+
+                </tr>
+
+            </f:for>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</html>

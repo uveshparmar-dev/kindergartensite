@@ -1,0 +1,39 @@
+@import 'EXT:kindergartensitepackage/Configuration/Sets/SitePackage/PageTsConfig/BackendLayouts/default.tsconfig'
+
+RTE {
+    default {
+        preset = kindergartensitepackage
+    }
+}
+
+TCEFORM {
+    pages {
+
+    }
+    tt_content {
+        frame_class {
+            addItems {
+                 padding-spacing = Small Container
+                 col-md-6-offset-md-3 = Centered Box 
+             }
+        }
+
+    }
+}
+
+TCEMAIN {
+
+}
+
+
+
+
+tx_news.templateLayouts{
+    100 = Activities and Events
+}
+
+tx_news.templateLayouts{
+    200 = News & Articles
+}
+
+

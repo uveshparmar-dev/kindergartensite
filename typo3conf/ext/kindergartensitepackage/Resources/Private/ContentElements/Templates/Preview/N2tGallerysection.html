@@ -1,0 +1,78 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tgallerysection_item}">
+
+    <div style="padding:15px;">
+
+
+
+
+        <!-- Total Images -->
+        <p>
+            <strong>Total Images:</strong>
+            {record.tx_kindergartensitepackage_n2tgallerysection_item -> f:count()}
+        </p>
+
+        <!-- Image Preview Label -->
+        <p><strong>Image Preview:</strong></p>
+
+        <!-- Images Row -->
+        <div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:10px;">
+
+            <f:for each="{record.tx_kindergartensitepackage_n2tgallerysection_item}" as="item">
+
+                <div style="border:1px solid #ddd; padding:5px;">
+
+                    <f:if condition="{item.icon_file}">
+                        <be:link.editRecord table="tt_content" uid="{record.uid}">
+                            <f:for each="{item.icon_file}" as="file" iteration="iterator">
+                                <f:if condition="{iterator.isFirst}">
+                                    <f:image image="{file}" width="120c" height="120c" />
+                                </f:if>
+                            </f:for>
+                        </be:link.editRecord>
+                    </f:if>
+
+                </div>
+
+            </f:for>
+
+        </div>
+
+        <!-- Button -->
+        <!-- Button -->
+        <f:if condition="{record.buttontext}">
+            <div style="margin-top:20px;">
+                <be:link.editRecord table="tt_content" uid="{record.uid}">
+                    <p>
+                        <strong>Button Text:</strong>
+                        {record.buttontext}
+
+                    </p>
+                </be:link.editRecord>
+
+                <f:if condition="{record.button_link}">
+                    <be:link.editRecord table="tt_content" uid="{record.uid}">
+                        <p style="margin-top:5px;">
+                            <strong>Button Link:</strong>
+
+                            <f:uri.typolink parameter="{record.button_link}" />
+
+                        </p>
+                    </be:link.editRecord>
+                </f:if>
+
+            </div>
+        </f:if>
+
+
+    </div>
+
+</f:if>
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tgallerysection_item -> f:count()} == 0">
+    <em style="color:#999;">No Gallery Images added yet.</em>
+</f:if>
+
+</html>

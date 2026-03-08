@@ -1,0 +1,47 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section id="gallery">
+	<div class="padding-medium pt-0">
+
+		<!-- SECTION TITLE -->
+		<f:if condition="{data.header}">
+			<h2 class="display-4 text-center mb-5">
+				<f:format.stripTags>{data.header}</f:format.stripTags>
+			</h2>
+		</f:if>
+
+		<!-- Masonry Container -->
+		<div class="row entry-container" id="masonry-gallery">
+
+			<f:for each="{data.gallery_images}" as="image">
+
+				<div class="entry-item col-md-4 my-3 gallery-item">
+
+					<!-- Lightbox Link -->
+					<a href="{image.originalFile.publicUrl}" class="image-link" title="">
+
+						<f:image image="{image}" class="post-image img-fluid rounded-4" alt="" loading="lazy" />
+
+					</a>
+
+				</div>
+
+			</f:for>
+
+		</div>
+
+		<!-- BUTTON -->
+		<f:if condition="{data.header_link}">
+			<div class="text-center">
+				<f:link.typolink parameter="{data.header_link}" class="btn btn-primary mt-4">
+					<f:if condition="{data.subheader}">
+						{data.subheader}
+					</f:if>
+				</f:link.typolink>
+			</div>
+		</f:if>
+
+	</div>
+</section>
+
+</html>

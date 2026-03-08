@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section id="categories">
+
+    <div class="container padding-medium">
+        <div class="row">
+
+            <f:for each="{items}" as="item">
+                <div class="col my-4 my-lg-0 text-center">
+
+                    <a href="{item.data.link}" class="categories-item">
+
+                        <div class="category-icon text-white p-5 rounded-circle"
+                            style="background-color:{item.data.bgcolor -> f:or(alternative:'#cccccc')};">
+
+                            <f:if condition="{item.images.0}">
+                                <f:image image="{item.images.0}" width="60" height="60" alt="{item.data.header}" />
+                            </f:if>
+
+                        </div>
+
+                        <!-- TITLE (ONLY ONE H2) -->
+                        <f:if condition="{item.data.header}">
+                            <h2>{item.data.header}</h2>
+                        </f:if>
+
+                    </a>
+
+                </div>
+            </f:for>
+
+        </div>
+    </div>
+
+</section>
+
+</html>

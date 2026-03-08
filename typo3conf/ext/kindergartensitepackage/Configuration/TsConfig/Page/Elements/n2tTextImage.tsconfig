@@ -1,0 +1,24 @@
+mod.wizards.newContentElement.wizardItems.common{
+      header = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_db.xlf:n2telement
+    elements {
+        n2ttextimage {
+            iconIdentifier = content-text
+            title = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_db.xlf:kindergartensitepackage.n2ttextwithimage
+            description = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_db.xlf:kindergartensitepackage.n2ttextwithimage.description
+            tt_content_defValues {
+                CType = n2ttextimage
+            }
+        }
+    }
+    show := addToList(n2ttextimage)
+}
+
+
+
+# Backend preview
+mod.web_layout.tt_content{
+    preview {
+         n2ttextimage = EXT:kindergartensitepackage/Resources/Private/ContentElements/Templates/Preview/N2ttextimage.html
+    }
+}
+

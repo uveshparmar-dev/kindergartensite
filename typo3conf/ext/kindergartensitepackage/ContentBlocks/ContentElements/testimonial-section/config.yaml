@@ -1,0 +1,36 @@
+name: net2typo/testimonial-section
+typeName: net2typo_testimonial_section
+group: default
+prefixFields: true
+
+fields:
+
+  - identifier: background_image
+    type: File
+    label: Background Image
+    maxitems: 1
+
+  - identifier: testimonials
+    type: Collection
+    label: Testimonials
+    
+
+    fields:
+
+      - identifier: person_image
+        type: File
+        label: Person Image
+        maxitems: 10
+
+      - identifier: description
+        type: Textarea
+        enableRichtext: true
+        label: Description
+
+      - identifier: name
+        type: Text
+        label: Name
+
+      - identifier: role
+        type: Text
+        label: Role

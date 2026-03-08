@@ -1,0 +1,30 @@
+name: net2typo/keyfeature
+typeName: net2typo_keyfeature
+group: default
+prefixFields: true
+prefixType: full
+
+fields:
+  -
+    identifier: keyfeature
+    type: Collection
+    label: Key Feature Items
+    appearance:
+      collapseAll: true
+    fields:
+
+      -
+        identifier: header
+        type: Text
+        label: Header
+
+      -
+        identifier: image
+        type: File
+        label: Image
+        maxitems: 1
+
+      -
+        identifier: background_color
+        type: Color
+        label: Background Color

@@ -1,0 +1,48 @@
+<f:asset.css identifier="heroimage" href="{cb:assetPath()}/style.css"/>
+<div class="hero_section_bgimg pb-5">
+    <div class="container">
+    	<div class="row hero_img">
+    		<div class="col-12  col-lg-8 hero_section_content">
+			    <f:if condition="{data.header}">
+			        <h2>{data.header}</h2>
+			    </f:if>
+			    <f:if condition="{data.bodytext}">
+		            <f:format.html>{data.bodytext}</f:format.html>
+		        </f:if>
+			   	<f:if condition="{data.subheader}">
+			   		<div class="herosection-link">
+				    	<f:if condition="{data.net2typo_heroimage_herolinks}">
+				    		<f:then>
+				    			<f:link.typolink parameter="{data.net2typo_heroimage_herolinks}" class="radiant_btn">
+				        			{data.subheader}
+				        		</f:link.typolink>
+				        	</f:then>
+				        	<f:else>
+				        		<f:if condition="{data.subheader}">
+				    				<button class="radiant_btn">{data.subheader}</button>
+				    			</f:if>
+				    		</f:else>
+				    	</f:if>
+				    </div>
+			    </f:if>
+			</div>
+		    <f:if condition="{data.image}">
+		        <f:for each="{data.image}" as="file">
+		        	<f:if condition="{file.link}">
+		        		<f:then>
+		        		 	<f:link.typolink parameter="{file.link}">
+		            			<f:image image="{file}" class="pe-0" width="860" title="{file.title}" alt="{file.alt}" />
+		            		</f:link.typolink>
+		            	</f:then>
+		            	<f:else>
+		            		<f:image image="{file}" class="pe-0" width="860" title="{file.title}" alt="{file.alt}" />
+		            	</f:else>
+		            </f:if>
+		            <f:if condition="{file.description}">
+                        <figcaption class="image-caption">{file.description}</figcaption>
+                    </f:if>
+	        	</f:for>
+		    </f:if>
+		</div>
+	</div>
+</div>

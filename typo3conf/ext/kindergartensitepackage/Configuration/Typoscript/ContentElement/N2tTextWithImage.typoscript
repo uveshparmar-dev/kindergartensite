@@ -1,0 +1,36 @@
+# CType: n2ttextimage
+tt_content.n2ttextimage =< lib.contentElement
+tt_content.n2ttextimage {
+    templateName = N2ttextimage
+
+    dataProcessing {
+
+        # (Optional) FlexForm values
+        10 = BK2K\BootstrapPackage\DataProcessing\FlexFormProcessor
+
+        # Fetch records from custom table
+        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        20 {
+            table = tx_kindergartensitepackage_n2ttextwithimage_item
+            pidInList.field = pid
+
+            where {
+                data = field:uid
+                intval = 1
+                wrap = tt_content=|
+            }
+
+            orderBy = sorting
+            as = items
+
+            dataProcessing {
+                # Fetch images from child records
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references.fieldName = media
+                }
+            }
+        }
+    }
+}
+

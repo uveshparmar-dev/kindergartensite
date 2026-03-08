@@ -1,0 +1,101 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tclasses_item}">
+
+    <div>
+
+        <strong>Classes Section</strong>
+        <hr>
+
+        <strong>Total Classes:</strong>
+        {record.tx_kindergartensitepackage_n2tclasses_item -> f:count()}
+        <br><br>
+        <be:link.editRecord table="tt_content" uid="{record.uid}">
+            <!-- TABLE HEADER -->
+            <div style="
+            display:flex;
+            font-weight:bold;
+            border-bottom:2px solid #ccc;
+            padding-bottom:6px;
+            margin-bottom:10px;
+        ">
+
+                <div style="width:120px;">Icon</div>
+                <div style="flex:1;">Title</div>
+                <div style="width:120px;">Age</div>
+                <div style="width:120px;">Class No.</div>
+                <div style="width:120px;">Amount</div>
+
+            </div>
+        </be:link.editRecord>
+
+
+        <!-- LOOP ITEMS -->
+        <f:for each="{record.tx_kindergartensitepackage_n2tclasses_item}" as="item">
+
+            <div style="
+                display:flex;
+                align-items:center;
+                border-bottom:1px solid #eee;
+                padding:8px 0;
+            ">
+
+                <!-- ICON (Clickable) -->
+                <div style="width:120px;">
+                    <f:if condition="{item.icon_file.0}">
+                        <be:link.editRecord table="tt_content" uid="{record.uid}">
+                            <f:image image="{item.icon_file.0}" width="60" height="60" style="cursor:pointer;" />
+                        </be:link.editRecord>
+                    </f:if>
+                </div>
+
+                <!-- TITLE (Clickable) -->
+                <div style="flex:1;">
+                    <be:link.editRecord table="tt_content" uid="{record.uid}">
+                        <strong style="cursor:pointer;">
+                            {item.title}
+                        </strong>
+                    </be:link.editRecord>
+                </div>
+
+                <!-- AGE (Clickable) -->
+                <div style="width:120px;">
+                    <be:link.editRecord table="tt_content" uid="{record.uid}">
+                        <span style="cursor:pointer;">
+                            {item.age}
+                        </span>
+                    </be:link.editRecord>
+                </div>
+
+                <!-- CLASS NUMBER (Clickable) -->
+                <div style="width:120px;">
+                    <be:link.editRecord table="tt_content" uid="{record.uid}">
+                        <span style="cursor:pointer;">
+                            {item.classnumber}
+                        </span>
+                    </be:link.editRecord>
+                </div>
+
+                <!-- AMOUNT (Clickable) -->
+                <div style="width:120px;">
+                    <be:link.editRecord table="tt_content" uid="{record.uid}">
+                        <span style="cursor:pointer;">
+                            {item.amount}
+                        </span>
+                    </be:link.editRecord>
+                </div>
+
+            </div>
+
+        </f:for>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tclasses_item -> f:count()} == 0">
+    <em>No Classes added yet.</em>
+</f:if>
+
+</html>

@@ -1,0 +1,60 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<!-- HERO SECTION -->
+<section class="hero-slider swiper slider swiper-fade position-relative">
+
+    <!-- SLIDES -->
+    <div class="swiper-wrapper">
+
+        <f:for each="{items}" as="item">
+
+            <div class="swiper-slide d-flex jarallax position-relative">
+
+                <!-- BACKGROUND IMAGE (Jarallax) -->
+                <f:if condition="{item.images.0}">
+                    <div class="jarallax-img hero-bg"
+                        style="background-image: url('{item.images.0.originalFile.publicUrl}');">
+                    </div>
+                </f:if>
+
+            </div>
+
+        </f:for>
+
+    </div>
+
+    <!-- STATIC CONTENT -->
+    <div class="hero-content text-center">
+
+        <f:if condition="{items.0.data.header}">
+            <h1 class="hero-title banner-title display-1 text-white mb-4">
+                <f:format.raw>{items.0.data.header}</f:format.raw>
+            </h1>
+        </f:if>
+
+        <!-- BUTTON -->
+        <f:if condition="{items.0.data.button_link}">
+            <f:link.typolink parameter="{items.0.data.button_link}" class="btn btn-primary mt-3">
+                ABOUT US
+            </f:link.typolink>
+        </f:if>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="main-slider-button-next swiper-button-next light-color me-md-5"></div>
+    <div class="main-slider-button-prev swiper-button-prev light-color ms-md-5"></div>
+
+</section>
+
+
+<!-- FLOATING ICONS (MOVED OUTSIDE SECTION like Mask) -->
+<f:if condition="{floatingIcons}">
+    <div class="hero-icons">
+        <f:for each="{floatingIcons}" as="icon">
+            <img src="{f:uri.image(image: icon)}" class="floating-icon" alt="" />
+        </f:for>
+    </div>
+</f:if>
+
+</html>

@@ -1,0 +1,72 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Preview" />
+
+<!-- OVERRIDE HEADER (so default header is not auto-rendered) -->
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="tt_content">
+        Gallery Section
+    </be:link.editRecord>
+</f:section>
+
+<!-- CONTENT -->
+<f:section name="Content">
+
+    <div style="padding:15px;">
+
+        <!-- Section Title -->
+        <f:if condition="{data.header}">
+            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                <p style="margin:0 0 10px 0; font-weight:600;">
+                    {data.header}
+                </p>
+            </be:link.editRecord>
+        </f:if>
+
+        <!-- Total Images -->
+        <p>
+            <strong>Total Images:</strong>
+            {data.net2typo_gallerysection_gallery_images -> f:count()}
+        </p>
+
+        <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+            <thead>
+                <tr style="text-align:left; border-bottom:1px solid #ccc;">
+                    <th style="padding:8px;">Preview</th>
+                    <th style="padding:8px;">File Name</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <f:for each="{data.net2typo_gallerysection_gallery_images}" as="image">
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:10px;">
+                            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                                <f:image image="{image}" width="80" />
+                            </be:link.editRecord>
+                        </td>
+                        <td style="padding:10px;">
+                            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                                {image.originalFile.name}
+                            </be:link.editRecord>
+                        </td>
+                    </tr>
+                </f:for>
+            </tbody>
+        </table>
+
+        <!-- Button Text -->
+        <f:if condition="{data.subheader}">
+            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                <div style="margin-top:15px;">
+                    <strong>Button Text:</strong> {data.subheader}
+                </div>
+            </be:link.editRecord>
+        </f:if>
+
+    </div>
+
+</f:section>
+
+</html>

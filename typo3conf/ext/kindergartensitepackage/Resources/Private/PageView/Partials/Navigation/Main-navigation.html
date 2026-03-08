@@ -1,0 +1,93 @@
+    <div class="site-header">
+        <div class="container">
+            <div class="header-inner">
+
+                <!-- LOGO -->
+                <div class="navbar-brand nav-logo me-0">
+                    <f:link.page pageUid="{rootPage}">
+                        <f:if condition="{settings.page.navigation.logo.file}">
+                            <f:image src="{settings.page.navigation.logo.file}" alt="{settings.page.navigation.logo.alt}" />
+                        </f:if>
+                    </f:link.page>
+                </div>
+
+                <!-- MOBILE HAMBURGER -->
+                <div class="mobile-hamburger">
+                    <f:if condition="{settings.page.navigation.hamburgerIcon.file}">
+                        <f:image src="{settings.page.navigation.hamburgerIcon.file}"
+                            alt="{settings.page.navigation.hamburgerIcon.alt}" class="hamburger-icon" />
+                    </f:if>
+                </div>
+
+                <!-- DESKTOP NAV -->
+                <div class="main-nav-wrapper">
+
+                    <!-- Desktop Menu -->
+                    <nav class="main-menu-nav">
+                        <f:cObject typoscriptObjectPath="lib.mainMenu" />
+                    </nav>
+
+                    <!-- Desktop Search Icon -->
+                    <div class="nav-search">
+                        <f:if condition="{settings.page.navigation.searchIcon.file}">
+                            <f:image src="{settings.page.navigation.searchIcon.file}"
+                                alt="{settings.page.navigation.searchIcon.alt}" class="search-icon" />
+                        </f:if>
+                    </div>
+
+                    <!-- Desktop Search Popup -->
+                    <div class="search-popup desktop-search-popup">
+                        <form
+                            action="{f:uri.action(action:'search', pageUid: 34, controller:'Search' ,extensionName:'indexedSearch', pluginName:'pi2')}"
+                            method="post">
+                            <input type="text" name="tx_indexedsearch_pi2[search][sword]" placeholder="Search…" required />
+
+                            <button type="submit" class="search-submit-icon">
+                                <f:image src="{settings.page.navigation.searchIcon.file}" alt="Search"
+                                    class="search-icon-white" />
+                            </button>
+                        </form>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ===============================
+        MOBILE MENU PANEL
+    ================================ -->
+    <div class="mobile-menu-panel">
+
+        <!-- Close Button -->
+        <div class="mobile-menu-close">×</div>
+
+        <!-- Mobile Menu Navigation -->
+        <nav class="mobile-menu-nav">
+            <f:cObject typoscriptObjectPath="lib.mainMenu" />
+        </nav>
+
+        <!-- Mobile Search Icon -->
+        <div class="mobile-search-btn">
+            <f:if condition="{settings.page.navigation.searchIcon.file}">
+                <f:image src="{settings.page.navigation.searchIcon.file}" alt="Search" class="mobile-search-icon" />
+            </f:if>
+        </div>
+
+        <!-- Mobile Search Popup -->
+        <div class="search-popup mobile-search-popup">
+            <form
+                action="{f:uri.action(action:'search', pageUid: 34, controller:'Search' ,extensionName:'indexedSearch', pluginName:'pi2')}"
+                method="post">
+                <input type="text" name="tx_indexedsearch_pi2[search][sword]" placeholder="Search…" required />
+
+                <button type="submit" class="search-submit-icon">
+                    <f:image src="{settings.page.navigation.searchIcon.file}" alt="Search" class="search-icon-white" />
+                </button>
+            </form>
+        </div>
+
+
+    </div>

@@ -1,0 +1,24 @@
+mod.wizards.newContentElement.wizardItems.common{
+     header = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_db.xlf:n2telement
+    elements {
+        upcomingevent {
+             iconIdentifier = content-text
+            title = Upcoming event
+            description = Upcoming event Description
+            tt_content_defValues {
+                CType = upcomingevent
+            }
+        }
+    }
+    show := addToList(upcomingevent)
+}
+
+
+
+# Backend preview
+mod.web_layout.tt_content{
+    preview {
+         upcomingevent = EXT:kindergartensitepackage/Resources/Private/ContentElements/Templates/Preview/N2tUpcomingevent.html
+    }
+}
+

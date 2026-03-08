@@ -1,0 +1,66 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<h2 style="text-align:center; margin:40px 0;">Create Student</h2>
+
+<div style="max-width:600px; margin:0 auto;">
+
+<f:form action="create" objectName="student" name="student" enctype="multipart/form-data">
+
+    <!-- FIRST NAME -->
+    <div style="margin-bottom:20px;">
+        <label>First Name</label><br>
+        <f:form.textfield property="firstName" style="width:100%; padding:10px;" />
+    </div>
+
+    <!-- LAST NAME -->
+    <div style="margin-bottom:20px;">
+        <label>Last Name</label><br>
+        <f:form.textfield property="lastName" style="width:100%; padding:10px;" />
+    </div>
+
+    <!-- EMAIL -->
+    <div style="margin-bottom:20px;">
+        <label>Email</label><br>
+        <f:form.textfield property="email" style="width:100%; padding:10px;" />
+    </div>
+
+    <!-- COLOR PICKER -->
+    <div style="margin-bottom:20px;">
+        <label>Color</label><br>
+        <f:form.textfield 
+            property="color"
+            type="color"
+            style="width:30%; height:45px; border:none;"
+        />
+    </div>
+
+    <!-- IMAGE UPLOAD -->
+    <div style="margin-bottom:25px;">
+        <label>Student Image</label><br>
+        <f:form.upload 
+            property="image"
+            accept="image/*"
+            style="width:100%; padding:8px;"
+        />
+    </div>
+
+    <!-- SUBMIT -->
+    <div>
+        <f:form.submit 
+            value="Save Student"
+            style="
+                padding:12px 22px;
+                background:black;
+                color:white;
+                border:none;
+                border-radius:6px;
+                font-weight:600;
+            "
+        />
+    </div>
+
+</f:form>
+
+</div>
+
+</html>

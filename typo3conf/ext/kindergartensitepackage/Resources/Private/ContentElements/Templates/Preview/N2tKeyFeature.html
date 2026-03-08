@@ -1,0 +1,83 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tkeyfeature_item}">
+
+    <div style="padding:15px;">
+
+        <strong>Key Features</strong>
+        <hr>
+
+        <!-- TOTAL ITEMS -->
+        <strong>Total Items:</strong>
+        {record.tx_kindergartensitepackage_n2tkeyfeature_item -> f:count()}
+        <br><br>
+
+        <!-- TABLE HEADER -->
+        <div style="
+            display:flex;
+            font-weight:bold;
+            border-bottom:2px solid #ccc;
+            padding-bottom:6px;
+            margin-bottom:10px;
+        ">
+            <div style="width:120px;">Icon</div>
+            <div style="flex:1;">Title</div>
+            <div style="width:140px;">Background Color</div>
+        </div>
+
+        <!-- LOOP ITEMS -->
+        <f:for each="{record.tx_kindergartensitepackage_n2tkeyfeature_item}" as="item">
+
+            <be:link.editRecord table="tt_content" uid="{record.uid}">
+                <div style="
+                    display:flex;
+                    align-items:center;
+                    border-bottom:1px solid #eee;
+                    padding:10px 0;
+                    cursor:pointer;
+                ">
+
+                    <!-- ICON -->
+                    <div style="width:120px;">
+                        <f:if condition="{item.icon_file.0}">
+                            <div style="
+                                background-color:{item.bgcolor -> f:or(alternative:'#cccccc')};
+                                width:60px;
+                                height:60px;
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                border-radius:50%;
+                            ">
+                                <f:image image="{item.icon_file.0}" width="40" height="40" />
+                            </div>
+                        </f:if>
+                    </div>
+
+                    <!-- TITLE -->
+                    <div style="flex:1;">
+                        <f:format.stripTags>{item.header}</f:format.stripTags>
+                    </div>
+
+                    <!-- BG COLOR VALUE -->
+                    <div style="width:140px;">
+                        <f:if condition="{item.bgcolor}">
+                            {item.bgcolor}
+                        </f:if>
+                    </div>
+
+                </div>
+            </be:link.editRecord>
+
+        </f:for>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tkeyfeature_item -> f:count()} == 0">
+    <em>No key features added yet.</em>
+</f:if>
+
+</html>

@@ -1,0 +1,108 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{record.tx_kindergartensitepackage_n2ttestimonialslider_item}">
+
+    <div style="padding:15px;">
+
+        <!-- Section Title -->
+        <be:link.editRecord table="tt_content" uid="{record.uid}">
+            <h4 style="margin-bottom:10px;">Testimonials Section</h4>
+        </be:link.editRecord>
+
+        <!-- Background Image -->
+        <f:if condition="{record.background_image}">
+            <p>
+                <strong>Background Image(s):</strong>
+                {record.background_image -> f:count()}
+            </p>
+            <be:link.editRecord table="tt_content" uid="{record.uid}">
+                <div style="margin-bottom:15px;">
+
+                    <f:for each="{record.background_image}" as="bg" iteration="iterator">
+                        <f:if condition="{iterator.isFirst}">
+                            <f:image image="{bg}" width="150c" />
+                        </f:if>
+                    </f:for>
+
+                </div>
+            </be:link.editRecord>
+        </f:if>
+
+        <!-- Total Testimonials -->
+        <p>
+            <strong>Total Testimonials:</strong>
+            {record.tx_kindergartensitepackage_n2ttestimonialslider_item -> f:count()}
+        </p>
+
+        <!-- Table -->
+        <table style="width:100%; border-collapse:collapse; margin-top:15px; table-layout:fixed;">
+
+            <thead>
+                <tr style="border-bottom:1px solid #ccc;">
+                    <th style="width:90px; padding:10px 0;">Image</th>
+                    <th style="width:50%; padding:10px 15px;">Message</th>
+                    <th style="width:180px; padding:10px 15px;">Name</th>
+                    <th style="width:150px; padding:10px 15px;">Role</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <f:for each="{record.tx_kindergartensitepackage_n2ttestimonialslider_item}" as="item">
+
+                    <tr style="border-bottom:1px solid #e5e5e5;">
+
+                        <!-- Image -->
+                        <td style="padding:15px 0;">
+                            <be:link.editRecord table="tt_content" uid="{record.uid}">
+                                <f:if condition="{item.icon_file}">
+                                    <f:for each="{item.icon_file}" as="file" iteration="iterator">
+                                        <f:if condition="{iterator.isFirst}">
+                                            <f:image image="{file}" width="70c" height="70c" />
+                                        </f:if>
+                                    </f:for>
+                                </f:if>
+                            </be:link.editRecord>
+                        </td>
+
+                        <!-- Message -->
+                        <td style="padding:15px;">
+                            <be:link.editRecord table="tt_content" uid="{record.uid}">
+
+                                <f:format.stripTags>
+                                    {item.bodytext}
+                                </f:format.stripTags>
+
+                            </be:link.editRecord>
+                        </td>
+
+                        <!-- Name -->
+                        <td style="padding:15px; font-weight:600;">
+                            <be:link.editRecord table="tt_content" uid="{record.uid}">
+                                {item.name}
+                            </be:link.editRecord>
+                        </td>
+
+                        <!-- Role -->
+                        <td style="padding:15px; font-weight:600; color:#666;">
+                            <be:link.editRecord table="tt_content" uid="{record.uid}">
+                                {item.role}
+                            </be:link.editRecord>
+                        </td>
+
+                    </tr>
+
+                </f:for>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{record.tx_kindergartensitepackage_n2ttestimonialslider_item -> f:count()} == 0">
+    <em style="color:#999;">No Testimonials added yet.</em>
+</f:if>
+
+</html>

@@ -1,0 +1,98 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+
+
+<f:layout name="Preview" />
+<!-- HEADER -->
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="tt_content">
+        Upcoming Events Section
+    </be:link.editRecord>
+</f:section>
+
+<!-- CONTENT -->
+<f:section name="Content">
+
+    <div style="padding:15px;">
+
+
+
+        <!-- Right Side Image -->
+        <f:if condition="{data.net2typo_events_right_image.0}">
+            <be:link.editRecord uid="{data.uid}" table="tt_content"></be:link.editRecord>
+            <div style="margin-bottom:10px;">
+                <strong>Right Image:</strong><br>
+                <f:image image="{data.net2typo_events_right_image.0}" width="120" />
+            </div>
+        </f:if>
+
+        <!-- Total Events -->
+        <p>
+            <strong>Total Events:</strong>
+            {data.net2typo_events_event_items -> f:count()}
+        </p>
+
+        <!-- TABLE -->
+        <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+
+            <thead>
+                <tr style="text-align:left; border-bottom:1px solid #ccc;">
+                    <th style="padding:8px;">Date</th>
+                    <th style="padding:8px;">Title</th>
+                    <th style="padding:8px;">Time</th>
+                    <th style="padding:8px;">Arrow</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <f:for each="{data.net2typo_events_event_items}" as="item">
+
+                    <tr style="border-bottom:1px solid #eee;">
+
+                        <!-- DATE -->
+                        <td style="padding:10px;">
+                            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                                <strong>{item.event_day}</strong> {item.event_month}
+                            </be:link.editRecord>
+                        </td>
+
+                        <!-- TITLE -->
+                        <td style="padding:10px;">
+                            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                                {item.event_title}
+                            </be:link.editRecord>
+                        </td>
+
+                        <!-- TIME -->
+                        <td style="padding:10px;">
+                            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                                {item.event_time}
+                            </be:link.editRecord>
+                        </td>
+
+
+
+                        <!-- ARROW ICON -->
+                        <td style="padding:10px;">
+                            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                                <f:if condition="{item.arrow_icon.0}">
+                                    <f:image image="{item.arrow_icon.0}" width="20" />
+                                </f:if>
+                            </be:link.editRecord>
+                        </td>
+
+                    </tr>
+
+                </f:for>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</f:section>
+
+</html>

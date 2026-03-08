@@ -1,0 +1,18 @@
+plugin.tx_news {
+  view {
+    templateRootPaths {
+   
+      100 = EXT:kindergartensitepackage/Resources/Private/Extensions/News/Templates/
+    }
+
+    partialRootPaths {
+     
+      100 = EXT:kindergartensitepackage/Resources/Private/Extensions/News/Partials/
+    }
+
+    layoutRootPaths {
+ 
+      100 = EXT:kindergartensitepackage/Resources/Private/Extensions/News/Layouts/
+    }
+  }
+}

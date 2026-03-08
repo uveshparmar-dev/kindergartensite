@@ -1,0 +1,64 @@
+<f:if condition="{data}">
+
+    <div class="mask-backend-preview">
+
+        <strong>Hero Icons</strong>
+        <hr>
+
+        <!-- TOTAL ICON COUNT -->
+        <f:if condition="{data.tx_mask_icon_image}">
+            <strong>Total Icons:</strong>
+            {data.tx_mask_icon_image -> f:count()}
+            <br><br>
+        </f:if>
+
+        <!-- ICON PREVIEW -->
+        <f:if condition="{data.tx_mask_icon_image}">
+            <strong>Icon Preview:</strong>
+            <br><br>
+
+            <div style="display:flex; flex-wrap:wrap; gap:16px;">
+
+                <f:for each="{data.tx_mask_icon_image}" as="icon" iteration="i">
+
+                    <div style="
+                        width:140px;
+                        border:1px solid #ddd;
+                        padding:8px;
+                        text-align:center;
+                        background:#fafafa;
+                    ">
+
+                        <!-- ICON IMAGE -->
+                        <f:media
+                            file="{icon}"
+                            width="80"
+                            height="80"
+                            alt="{icon.alternative}"
+                        />
+
+                        <!-- ICON DESCRIPTION -->
+                        <f:if condition="{icon.description}">
+                            <div style="margin-top:6px; font-size:12px;">
+                                <f:format.stripTags>
+                                    {icon.description}
+                                </f:format.stripTags>
+                            </div>
+                        </f:if>
+
+                    </div>
+
+                </f:for>
+
+            </div>
+
+            <br>
+        </f:if>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{data} == 0">
+    <em>No hero icons added yet.</em>
+</f:if>

@@ -1,0 +1,75 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div style="padding:10px;">
+
+    <be:link.editRecord uid="{data.uid}" table="tt_content">
+        <h3 style="margin-bottom:10px;">
+            N2t Testimonial Slider
+        </h3>
+    </be:link.editRecord>
+
+    <!-- TOTAL COUNT -->
+    <p>
+        <strong>Total Testimonials:</strong>
+        {data.net2typo_testimonialsection_testimonials -> f:count()}
+    </p>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+
+        <thead>
+            <tr style="text-align:left; border-bottom:1px solid #ccc;">
+                <th style="padding:8px;">Image</th>
+                <th style="padding:8px;">Message</th>
+                <th style="padding:8px;">Name</th>
+                <th style="padding:8px;">Role</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <f:for each="{data.net2typo_testimonialsection_testimonials}" as="item">
+
+                <tr style="border-bottom:1px solid #eee;">
+
+                    <!-- IMAGE -->
+                    <td style="padding:12px;">
+                        <be:link.editRecord uid="{data.uid}" table="tt_content">
+                            <f:if condition="{item.person_image.0}">
+                                <f:image image="{item.person_image.0}" width="60" />
+                            </f:if>
+                        </be:link.editRecord>
+                    </td>
+
+                    <!-- DESCRIPTION -->
+                    <td style="padding:12px;">
+                        <be:link.editRecord uid="{data.uid}" table="tt_content">
+                            “{item.description -> f:format.stripTags() -> f:format.crop(maxCharacters:150)}”
+                        </be:link.editRecord>
+                    </td>
+
+                    <!-- NAME -->
+                    <td style="padding:12px;">
+                        <be:link.editRecord uid="{data.uid}" table="tt_content">
+                            <strong>{item.name}</strong>
+                        </be:link.editRecord>
+                    </td>
+
+                    <!-- ROLE -->
+                    <td style="padding:12px;">
+                        <be:link.editRecord uid="{data.uid}" table="tt_content">
+                            {item.role}
+                        </be:link.editRecord>
+                    </td>
+
+                </tr>
+
+            </f:for>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</html>

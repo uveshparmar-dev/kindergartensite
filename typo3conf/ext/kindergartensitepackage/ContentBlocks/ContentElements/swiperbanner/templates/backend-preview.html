@@ -1,0 +1,70 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Preview" />
+
+<f:section name="Header">
+    <strong>N2t Swiper Banner</strong>
+</f:section>
+
+<f:section name="Content">
+
+    <div style="padding:10px;">
+
+        <h4>Hero Slider</h4>
+
+        <p>
+            <strong>Total Slides:</strong>
+            <f:count subject="{data.image}" />
+        </p>
+
+        <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+            <thead>
+                <tr style="text-align:left; border-bottom:1px solid #ccc;">
+                    <th style="padding:8px;">Image</th>
+                    <th style="padding:8px;">Slide Title</th>
+                    <th style="padding:8px;">Button Link</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <f:for each="{data.image}" as="img">
+
+                    <tr style="border-bottom:1px solid #eee;">
+
+                        <!-- IMAGE (Clickable Only Here) -->
+                        <td style="padding:10px;">
+                            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                                <f:image image="{img}" width="120" />
+                            </be:link.editRecord>
+                        </td>
+
+                        <!-- TITLE (Clickable Only On Text) -->
+                        <td style="padding:10px;">
+                            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                                
+                                    <f:sanitize.html>{data.header}</f:sanitize.html>
+                                </span>
+                            </be:link.editRecord>
+                        </td>
+
+                        <!-- LINK (Normal Display) -->
+                        <td style="padding:10px;">
+                            <f:if condition="{data.header_link}">
+                                <f:link.typolink parameter="{data.header_link}">
+                                    Open Link
+                                </f:link.typolink>
+                            </f:if>
+                        </td>
+
+                    </tr>
+
+                </f:for>
+            </tbody>
+        </table>
+
+    </div>
+
+</f:section>
+
+</html>

@@ -1,0 +1,86 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tswiperbanner_item}">
+
+    <div style="padding:15px;">
+
+        <strong>Hero Slider</strong>
+        <hr>
+
+        <!-- TOTAL SLIDES -->
+        <strong>Total Slides:</strong>
+        {record.tx_kindergartensitepackage_n2tswiperbanner_item -> f:count()}
+        <br><br>
+
+        <!-- TABLE HEADER -->
+        <div style="
+            display:flex;
+            font-weight:bold;
+            border-bottom:2px solid #ccc;
+            padding-bottom:6px;
+            margin-bottom:10px;
+        ">
+            <div style="width:140px;">Image</div>
+            <div style="flex:1;">Slide Title</div>
+            <div style="flex:1;">Button Link</div>
+        </div>
+
+        <!-- LOOP SLIDES -->
+        <f:for each="{record.tx_kindergartensitepackage_n2tswiperbanner_item}" as="item" iteration="i">
+
+            <div style="
+                display:flex;
+                align-items:center;
+                border-bottom:1px solid #eee;
+                padding:8px 0;
+            ">
+
+                <!-- IMAGE -->
+                <div style="width:140px;">
+                    <f:if condition="{item.icon_file.0}">
+                        <f:image image="{item.icon_file.0}" width="120" height="70" />
+                    </f:if>
+                </div>
+
+                <!-- TITLE -->
+                <div style="flex:1;">
+                    <f:format.stripTags>{item.header}</f:format.stripTags>
+                </div>
+
+                <!-- BUTTON LINK -->
+                <div style="flex:1;">
+                    <f:if condition="{item.button_link}">
+                        <f:uri.typolink parameter="{item.button_link}" />
+                    </f:if>
+                </div>
+
+            </div>
+
+        </f:for>
+
+        <!-- FLOATING ICONS SECTION -->
+        <f:if condition="{record.floating_icons_images}">
+            <br>
+            <strong>Floating Icons:</strong>
+            <hr>
+
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;">
+
+                <f:for each="{record.floating_icons_images}" as="icon">
+                    <div style="border:1px solid #eee; padding:5px;">
+                        <f:image image="{icon}" width="60" height="60" />
+                    </div>
+                </f:for>
+
+            </div>
+        </f:if>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tswiperbanner_item -> f:count()} == 0">
+    <em>No hero slides added yet.</em>
+</f:if>
+
+</html>

@@ -1,0 +1,92 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{settings.templateLayout} == 100">
+    <div class="item col-md-3
+        <f:if condition='{newsItem.firstCategory}'>
+            {newsItem.firstCategory.title -> f:format.case(mode: 'lower')}
+        </f:if>">
+
+        <!-- CENTERING WRAPPER -->
+        <div class="position-absolute top-50 start-50 translate-middle w-100">
+
+            <div class="article text-center">
+
+                <!-- DATE -->
+                <p class="news-list-date">
+                    <f:format.date date="{newsItem.datetime}" format="d M, D" />
+                </p>
+
+                <!-- TITLE -->
+                <h2 class="activities-title-tile">
+                    <n:link newsItem="{newsItem}">
+                        {newsItem.title}
+                    </n:link>
+                </h2>
+
+                <!-- TIME -->
+                <p class="news-time">
+                    <f:if condition="{newsItem.starttime}">
+                        <f:format.date date="{newsItem.starttime}" format="g:i A" />
+                        <f:if condition="{newsItem.endtime}">
+                            –
+                            <f:format.date date="{newsItem.endtime}" format="g:i A" />
+                        </f:if>
+                    </f:if>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</f:if>
+
+<f:if condition="{settings.templateLayout} == 200">
+    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+        <!-- ADDED: card wrapper -->
+        <div class="card bg-white rounded-4 ">
+
+            <div class="news-card">
+
+                <!-- IMAGE -->
+                <f:if condition="{newsItem.media.0}">
+                    <!-- ADDED: rounded-top instead of full rounded -->
+                    <div class="news-img-wrap">
+                        <n:link newsItem="{newsItem}">
+                            <f:image image="{newsItem.media.0}" class="img-fluid rounded-top-4"
+                                alt="{newsItem.media.0.alternative}" />
+                        </n:link>
+                    </div>
+                </f:if>
+
+                <div class="card-body p-3">
+
+                    <!-- DATE -->
+                    <p class="news-date mb-2">
+                        <f:format.date date="{newsItem.datetime}" format="d M, D" />
+                    </p>
+
+                    <!-- TITLE (SAME LINK AS IMAGE) -->
+                    <f:if condition="{newsItem.bodytext}">
+                        <n:link newsItem="{newsItem}">
+                            <h2 class="m-0 lh-sm">
+                                {newsItem.bodytext
+                                -> f:format.stripTags()
+                                -> f:format.crop(maxCharacters: 120)}
+                            </h2>
+                        </n:link>
+                    </f:if>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</f:if>
+
+
+
+</html>

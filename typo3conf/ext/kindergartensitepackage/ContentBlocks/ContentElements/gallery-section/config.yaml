@@ -1,0 +1,24 @@
+name: net2typo/gallery-section
+typeName: net2typo_gallery_section
+group: default
+prefixFields: true
+prefixType: full
+
+fields:
+  -
+    identifier: header
+    useExistingField: true
+    label: Section Title
+  -
+    identifier: gallery_images
+    type: File
+    label: Gallery Images
+    maxitems: 12
+  -
+    identifier: subheader
+    useExistingField: true
+    label: Button Text
+  -
+    identifier: header_link
+    useExistingField: true
+    label: Button Link

@@ -1,0 +1,50 @@
+##############################################
+# DYNAMIC CONTENT WITH SLIDE (colPos ANY)
+##############################################
+
+lib.dynamicContentSlide = COA
+lib.dynamicContentSlide {
+
+    5 = LOAD_REGISTER
+    5 {
+        colPos.cObject = TEXT
+        colPos.cObject {
+            field = colPos
+            ifEmpty = 0
+        }
+
+        pageUid.cObject = TEXT
+        pageUid.cObject {
+            field = pageUid
+            ifEmpty.data = TSFE:id
+        }
+    }
+
+
+    10 = CONTENT
+    10 {
+        table = tt_content
+
+        select {
+            pidInList.data = register:pageUid
+            orderBy = sorting
+            includeRecordsWithoutDefaultTranslation = 1
+
+            # Match the colPos dynamically
+            where = colPos = {register:colPos}
+            where.insertData = 1
+
+            # Language support (recommended)
+            languageField = sys_language_uid
+        }
+
+        # Slide to parents until found
+        slide = -1
+
+        # Only return first set found (important!)
+        slide.collect = 0
+    }
+
+
+    20 = RESTORE_REGISTER
+}

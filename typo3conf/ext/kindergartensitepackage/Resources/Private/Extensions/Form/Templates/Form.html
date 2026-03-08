@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<!-- SITEPACKAGE FORM TEMPLATE ACTIVE -->
+<div class="container offset-md-3 col-md-6 text-center pb-160 ">
+    <div class="contact-form row mt-5   form-identifier-{form.formDefinition.identifier}">
+        <formvh:renderRenderable renderable="{form}">
+            <formvh:form object="{form}" class="w-100" novalidate="1">
+
+                <!-- FORM FIELDS -->
+                <f:render partial="{form.currentPage.templateName}" arguments="{page: form.currentPage}" />
+
+                <!-- SUBMIT BUTTON -->
+                <div class="text-center">
+                    <f:render partial="Form/Navigation" arguments="{form: form}" />
+                </div>
+
+            </formvh:form>
+        </formvh:renderRenderable>
+    </div>
+</div>
+
+</html>

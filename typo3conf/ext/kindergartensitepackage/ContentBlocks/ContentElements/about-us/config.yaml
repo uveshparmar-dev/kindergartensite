@@ -1,0 +1,28 @@
+name: net2typo/about-us
+typeName: net2typo_about-us
+group: default
+prefixFields: true
+prefixType: full
+
+fields:
+  - identifier: header
+    useExistingField: true
+    label: Main Heading
+
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+    label: Description
+
+  - identifier: subheader
+    useExistingField: true
+    label: Button Text
+
+  - identifier: header_link
+    useExistingField: true
+    label: Button Link
+
+  - identifier: background_image
+    type: File
+    label: Background Image
+    maxitems: 1

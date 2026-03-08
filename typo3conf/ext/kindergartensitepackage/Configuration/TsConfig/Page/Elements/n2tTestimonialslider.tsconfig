@@ -1,0 +1,24 @@
+mod.wizards.newContentElement.wizardItems.common{
+     header = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_db.xlf:n2telement
+    elements {
+        testimonialslider {
+             iconIdentifier = content-text
+            title = Testimonialslider Slider
+            description = Testimonialslider Slider Description
+            tt_content_defValues {
+                CType = testimonialslider
+            }
+        }
+    }
+    show := addToList(testimonialslider)
+}
+
+
+
+# Backend preview
+mod.web_layout.tt_content{
+    preview {
+         testimonialslider = EXT:kindergartensitepackage/Resources/Private/ContentElements/Templates/Preview/N2tTestimonialslider.html
+    }
+}
+

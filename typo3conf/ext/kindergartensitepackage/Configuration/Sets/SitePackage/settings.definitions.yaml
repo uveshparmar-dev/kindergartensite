@@ -1,0 +1,147 @@
+categories:
+  kindergartensitepackage:
+    label: "Kindergarten Sitepackage"
+
+  kindergartensitepackage.navigation:
+    label: "Navigation"
+    parent: kindergartensitepackage
+
+  kindergartensitepackage.topbar:
+    label: "Top Bar"
+    parent: kindergartensitepackage
+  
+
+
+    
+
+
+settings:
+
+  page.navigation.logo.file:
+    label: "LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang.xlf:settings.logo"
+    description: "LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang.xlf:settings.logo.description"
+    category: kindergartensitepackage.navigation
+    type: string
+    default: "EXT:kindergartensitepackage/Resources/Public/Icons/main-logo.png"
+
+
+  page.navigation.logo.alt:
+    label: "LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang.xlf:settings.logo.alt"
+    description: "LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang.xlf:settings.logo.alt.description"
+    category: kindergartensitepackage.navigation
+    type: string
+    default: "Kindergarten Logo"
+
+  #########################################
+  # SEARCH ICON SETTINGS
+  #########################################
+
+  page.navigation.searchIcon.file:
+    label: "LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang.xlf:settings.searchIcon"
+    description: "LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang.xlf:settings.searchIcon.description"
+    category: kindergartensitepackage.navigation
+    type: string
+    default: "EXT:kindergartensitepackage/Resources/Public/Icons/download.svg"
+
+  page.navigation.searchIcon.alt:
+    label: "LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang.xlf:settings.searchIcon.alt"
+    description: "LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang.xlf:settings.searchIcon.alt.description"
+    category: kindergartensitepackage.navigation
+    type: string
+    default: "Search Icon"
+
+
+
+  ###################################################
+  # ⭐ HAMBURGER MENU ICON SETTINGS
+  ###################################################
+  page.navigation.hamburgerIcon.file:
+    label: "Hamburger Menu Icon"
+    description: "Upload the SVG icon used for mobile menu toggle"
+    category: kindergartensitepackage.navigation
+    type: string
+    default: "EXT:kindergartensitepackage/Resources/Public/Icons/Hamburger-menu.svg"
+
+  page.navigation.hamburgerIcon.alt:
+    label: "Hamburger Icon Alt Text"
+    description: "Alternative text for the hamburger menu icon"
+    category: kindergartensitepackage.navigation
+    type: string
+    default: "Mobile Menu Toggle"
+
+ #########################################
+  # TOP BAR SETTINGS (ADDRESS + PHONE)
+  #########################################
+
+  page.topbar.address:
+    label: "Top Bar Address"
+    category: kindergartensitepackage.topbar
+    type: string
+    default: "State Road 54 Trinity, Florida"
+
+  page.topbar.phone:
+    label: "Top Bar Phone"
+    category: kindergartensitepackage.topbar
+    type: string
+    default: "666 333 9999"
+
+
+  #########################################
+  # TOP BAR ICONS (UPLOADABLE)
+  #########################################
+
+  page.topbar.icon.address:
+    label: "Address Icon"
+    category: kindergartensitepackage.topbar
+    type: string
+    default: "EXT:kindergartensitepackage/Resources/Public/Icons/location-dot-solid-full.svg"
+
+  page.topbar.icon.phone:
+    label: "Phone Icon"
+    category: kindergartensitepackage.topbar
+    type: string
+    default: "EXT:kindergartensitepackage/Resources/Public/Icons/phone-solid-full.svg"
+
+  page.topbar.icon.facebook:
+    label: "Facebook Icon"
+    category: kindergartensitepackage.topbar
+    type: string
+    default: "EXT:kindergartensitepackage/Resources/Public/Icons/facebook-brands-solid-full.svg"
+
+  page.topbar.icon.instagram:
+    label: "Instagram Icon"
+    category: kindergartensitepackage.topbar
+    type: string
+    default: "EXT:kindergartensitepackage/Resources/Public/Icons/instagram-brands-solid-full.svg"
+
+  page.topbar.icon.twitter:
+    label: "Twitter Icon"
+    category: kindergartensitepackage.topbar
+    type: string
+    default: "EXT:kindergartensitepackage/Resources/Public/Icons/twitter-brands-solid-full.svg"
+
+
+  #########################################
+  # TOP BAR SOCIAL URLS
+  #########################################
+
+  page.topbar.facebook:
+    label: "Facebook URL"
+    category: kindergartensitepackage.topbar
+    type: string
+    default: "#"
+
+  page.topbar.instagram:
+    label: "Instagram URL"
+    category: kindergartensitepackage.topbar
+    type: string
+    default: "#"
+
+  page.topbar.twitter:
+    label: "Twitter URL"
+    category: kindergartensitepackage.topbar
+    type: string
+    default: "#"
+
+
+    

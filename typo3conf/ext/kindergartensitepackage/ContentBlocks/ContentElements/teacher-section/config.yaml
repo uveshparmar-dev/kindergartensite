@@ -1,0 +1,35 @@
+name: net2typo/teacher-section
+typeName: net2typo_educators
+group: default
+prefixFields: true
+prefixType: full
+
+fields:
+  - identifier: header
+    type: Text
+    label: Section Heading
+    
+  - identifier: educator_items
+    type: Collection
+    label: Educators
+    maxitems: 12
+
+    fields:
+      - identifier: image
+        type: File
+        label: Educator Image
+        allowed: common-image-types
+        maxitems: 1
+
+      - identifier: header
+        type: Text
+        label: Educator Name
+        
+      - identifier: subheader
+        type: Text
+        label: Designation
+        
+      - identifier: link
+        type: Link
+        label: Profile Link
+        

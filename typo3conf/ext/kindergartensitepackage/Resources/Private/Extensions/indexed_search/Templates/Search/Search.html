@@ -1,0 +1,52 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:asset.script identifier="indexed_search_pagination"
+                src="EXT:indexed_search/Resources/Public/JavaScript/pagination.js" />
+
+<section class="search-page">
+
+    <!-- SEARCH FORM -->
+    <section class="search-form-section">
+        <f:alias map="{sword: searchParams.sword}">
+            <f:render partial="Form" arguments="{_all}" />
+        </f:alias>
+    </section>
+
+    <!-- RESULTS -->
+    <f:for each="{resultsets}" as="result">
+
+        <f:if condition="{result.count} > 0">
+
+            <div class="search-results-title">
+                Search results for {searchParams.sword}
+            </div>
+
+            <div class="search-results-list">
+                <f:for each="{result.rows}" as="row">
+                    <f:if condition="!{row.isSectionHeader}">
+                        <f:render partial="Searchresult" arguments="{row: row}" />
+                    </f:if>
+                </f:for>
+            </div>
+
+            <!-- PAGINATION -->
+            <div class="tx-indexedsearch-browsebox search-pagination">
+                <f:render partial="Pagination"
+                          arguments="{pagination: result.pagination, searchParams: searchParams}" />
+            </div>
+
+        </f:if>
+
+        <!-- NO RESULT -->
+        <f:if condition="{result.count} == 0">
+            <div class="search-no-results">
+                <f:translate key="result.noResult" />
+            </div>
+        </f:if>
+
+    </f:for>
+
+</section>
+
+</html>

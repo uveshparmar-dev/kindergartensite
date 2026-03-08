@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages">
+        <header>
+            <authorName>Example</authorName>
+            <authorEmail>example@example.org</authorEmail>
+        </header>
+
+        <body>
+
+            <!-- Backend Layout Title -->
+            <trans-unit id="backend_layout.footer_layout">
+                <source>Default Layout</source>
+            </trans-unit>
+
+            <!-- Optional Columns (if used elsewhere) -->
+            <trans-unit id="backend_layout.column.stage">
+                <source>Stage</source>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.column.banner">
+                <source>Banner</source>
+            </trans-unit>
+
+            
+
+            <!-- Footer Backend Layout Labels -->
+            <trans-unit id="backend.footer.title">
+                <source>Default</source>
+            </trans-unit>
+
+            <trans-unit id="backend.main.content">
+                <source>Main Content</source>
+            </trans-unit>
+
+            <trans-unit id="backend.footer">
+                <source>Footer</source>
+            </trans-unit>
+
+            <trans-unit id="backend.footer.social">
+                <source>Footer: Social Icons</source>
+            </trans-unit>
+
+            <trans-unit id="backend.footer.bottom">
+                <source>Footer: Bottom Section</source>
+            </trans-unit>
+
+
+
+            <trans-unit id="backend.maincontent">
+                <source>Main Content</source>
+            </trans-unit>
+
+            <trans-unit id="backend.footer">
+                <source>Footer</source>
+            </trans-unit>
+
+
+        </body>
+    </file>
+</xliff>

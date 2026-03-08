@@ -1,0 +1,18 @@
+plugin.tx_indexedsearch {
+  view {
+    templateRootPaths {
+      10 = EXT:indexed_search/Resources/Private/Templates/
+      20 = EXT:kindergartensitepackage/Resources/Private/Extensions/indexed_search/Templates/
+    }
+
+    partialRootPaths {
+      10 = EXT:indexed_search/Resources/Private/Partials/
+      20 = EXT:kindergartensitepackage/Resources/Private/Extensions/indexed_search/Partials/
+    }
+
+    layoutRootPaths {
+      10 = EXT:indexed_search/Resources/Private/Layouts/
+      20 = EXT:kindergartensitepackage/Resources/Private/Extensions/indexed_search/Layouts/
+    }
+  }
+}

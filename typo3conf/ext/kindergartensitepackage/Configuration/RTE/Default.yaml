@@ -1,0 +1,44 @@
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+editor:
+    config:
+        contentsCss: "EXT:kindergartensitepackage/Resources/Public/Css/rte.css"
+
+        stylesSet:
+            - { name: "Display 1 (Heading)", element: "h1", attributes: { 'class': 'hero-title banner-title display-1 text-white mb-4' } }
+            - { name: "Display 4 mb-3 (Heading)", element: "h2", attributes: { 'class': 'display-4 mb-3' } }
+            - { name: "fw-bold (Paragraph)", element: "p", attributes: { 'class': 'fw-bold' } }
+
+        toolbarGroups:
+            - { name: styles, groups: [ format, styles ] }
+            - { name: basicstyles, groups: [ basicstyles ] }
+            - { name: paragraph, groups: [ list, indent, blocks, align ] }
+            - "/"
+            - { name: links, groups: [ links ] }
+            - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
+            - { name: editing, groups: [ spellchecker ] }
+            - { name: insert, groups: [ insert ] }
+            - { name: tools, groups: [ table, specialchar ] }
+            - { name: document, groups: [ mode ] }
+
+        format_tags: "p;h1;h2;h3;h4;h5;pre"
+
+        justifyClasses:
+            - text-left
+            - text-center
+            - text-right
+            - text-justify
+
+        extraPlugins:
+            - justify
+
+        removePlugins:
+            - image
+
+        removeButtons:
+            - Anchor
+            - Underline
+            - Strike

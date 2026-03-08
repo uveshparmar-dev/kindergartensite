@@ -1,0 +1,66 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Preview" />
+
+<!-- HEADER -->
+<f:section name="Header">
+    <div style="padding:15px;">
+        <be:link.editRecord uid="{data.uid}" table="tt_content">
+            <strong>CTA Section</strong>
+        </be:link.editRecord>
+    </div>
+</f:section>
+
+<!-- CONTENT -->
+<f:section name="Content">
+    <hr style="margin-top:10px; border:0; border-top:1px solid #ccc;">
+    <div style="padding:15px;">
+
+        <!-- Main Heading -->
+        <f:if condition="{data.header}">
+            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                <h4 style="margin:0 0 10px 0;">
+                    <strong>Header:</strong>
+                    {data.header}
+                </h4>
+            </be:link.editRecord>
+        </f:if>
+
+        <!-- Description -->
+        <f:if condition="{data.bodytext}">
+            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                <p style="margin:0 0 15px 0;">
+                    <strong>Description:</strong>
+                    {data.bodytext -> f:format.stripTags() -> f:format.crop(maxCharacters:180, append:'...')}
+                </p>
+
+            </be:link.editRecord>
+        </f:if>
+
+        <!-- Button -->
+        <f:if condition="{data.subheader}">
+            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                <div style="margin-bottom:8px;">
+                    <strong>Button Text:</strong> {data.subheader}
+                </div>
+            </be:link.editRecord>
+        </f:if>
+
+
+
+        <!-- Background Image -->
+        <f:if condition="{data.net2typo_ctasection_background_image.0}">
+            <be:link.editRecord uid="{data.uid}" table="tt_content">
+                <div style="margin-top:10px;">
+                    <strong>Background Image:</strong><br>
+                    <f:image image="{data.net2typo_ctasection_background_image.0}" width="200" />
+                </div>
+            </be:link.editRecord>
+        </f:if>
+
+    </div>
+
+</f:section>
+
+</html>

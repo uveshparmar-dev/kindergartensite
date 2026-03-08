@@ -1,0 +1,53 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section class="hero-slider swiper slider swiper-fade position-relative">
+
+	<!-- SLIDES -->
+	<div class="swiper-wrapper">
+
+		<f:for each="{data.image}" as="file">
+			<div class="swiper-slide d-flex jarallax position-relative">
+
+				<div class="jarallax-img hero-bg" style="background-image: url('{f:uri.image(image:file)}');">
+				</div>
+
+			</div>
+		</f:for>
+
+	</div>
+
+	<!-- STATIC CONTENT -->
+	<div class="hero-content text-center">
+
+		<f:if condition="{data.header}">
+			<div class="hero-title banner-title display-1 text-white mb-4">
+				<f:format.raw>{data.header}</f:format.raw>
+			</div>
+		</f:if>
+
+		<!-- BUTTON -->
+		<f:if condition="{data.header_link}">
+			<f:link.typolink parameter="{data.header_link}" class="btn btn-primary mt-3">
+				{data.subheader}
+			</f:link.typolink>
+		</f:if>
+
+	</div>
+
+	<!-- NAVIGATION -->
+	<div class="main-slider-button-next swiper-button-next light-color me-md-5"></div>
+	<div class="main-slider-button-prev swiper-button-prev light-color ms-md-5"></div>
+
+</section>
+
+
+<!-- FLOATING ICONS -->
+<f:if condition="{data.net2typo_swiperbanner_floating_icons_images}">
+	<div class="hero-icons">
+		<f:for each="{data.net2typo_swiperbanner_floating_icons_images}" as="icon">
+			<img src="{f:uri.image(image: icon)}" class="floating-icon" alt="" />
+		</f:for>
+	</div>
+</f:if>
+
+</html>

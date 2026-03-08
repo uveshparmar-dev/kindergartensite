@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages"
+        date="2025-09-26UTC10:56:260">
+        <header>
+            <authorName>Example</authorName>
+            <authorEmail>example@example.org</authorEmail>
+
+        </header>
+        <body>
+
+            <!-- ========================= -->
+            <!-- N2T TEXT WITH IMAGE -->
+            <!-- ========================= -->
+            <trans-unit id="n2telement">
+                <source>N2t Element</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2ttextwithimage">
+                <source>N2t Text With Image</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2ttextwithimage.description">
+                <source>N2t Text With Image description</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2ttextwithimage.n2ttextimage_title">
+                <source>Title</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2ttextwithimage_item">
+                <source>Items</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2ttextwithimage_item.tt_content">
+                <source>Items</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2ttextwithimage_item.header">
+                <source>Header</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2ttextwithimage_item.bodytext">
+                <source>Bodytext</source>
+            </trans-unit>
+
+            <!-- ========================= -->
+            <!-- N2T KEY FEATURE -->
+            <!-- ========================= -->
+            <trans-unit id="n2telement-keyfeature">
+                <source>N2t Element-KeyFeature</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2tkeyfeature">
+                <source>N2t Key Feature</source>
+            </trans-unit>
+
+
+            <trans-unit id="tx_kindergartensitepackage_icon_group_item.icon_file">
+                <source>Image</source>
+            </trans-unit>
+
+
+            <trans-unit id="tx_kindergartensitepackage_n2tkeyfeature_item.bg-color">
+                <source>Background-color</source>
+            </trans-unit>
+
+
+            <trans-unit id="icon_group_item.icon_identifier">
+                <source>Icon</source>
+            </trans-unit>
+            <trans-unit id="icon_group_item.icon_file">
+                <source>Icon</source>
+            </trans-unit>
+
+            <!-- ========================= -->
+            <!-- N2T SWIPER BANNER -->
+            <!-- ========================= -->
+
+            <trans-unit id="n2telement-swiperbanner">
+                <source>N2t Element SWiper Banner</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2tswiperbanner">
+                <source>N2t Swiper Banner</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tswiperbanner_title">
+                <source>Swiper Banner Title</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2tswiperbanner.description">
+                <source>N2t Swiper Banner description</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tswiperbanner.swiperbanner_title">
+                <source>Swiper Banner Title</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2tswiperbanner_item">
+                <source> Swiper Banner Items</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2tswiperbanner_item.header">
+                <source>Swiper Banner Header</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2tswiperbanner_item.bodytext">
+                <source>Swiper Banner Bodytext</source>
+            </trans-unit>
+
+            <trans-unit id="swiperbanner_icon_group_item.icon_file">
+                <source>Icon</source>
+            </trans-unit>
+
+
+            <trans-unit id="tx_kindergartensitepackage_n2tswiperbanner_item.button_link">
+                <source>Swiper Banner Button</source>
+            </trans-unit>
+
+
+            <trans-unit id="n2telement-teacher">
+                <source>N2t Element Teacher</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2tteacher">
+                <source>N2t Teacher</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tteacher_title">
+                <source>Teacher Title</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2tteacher.description">
+                <source>N2t Teacher description</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tteacher.teacher_title">
+                <source>Teacher Title</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2tteacher_item">
+                <source> Teacher Items</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2tteacher_item.header">
+                <source>Teacher</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2tteacher_item.bodytext">
+                <source>Teacher Bodytext</source>
+            </trans-unit>
+
+            <trans-unit id="teacher_icon_group_item.icon_file">
+                <source>Icon</source>
+            </trans-unit>
+
+
+            <trans-unit id="n2telement-aboutus">
+                <source>N2t Element About Us</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2taboutus">
+                <source>N2t About us</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2taboutus_title">
+                <source>About us Title</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2taboutus.description">
+                <source>N2t About us description</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2taboutus.aboutus_title">
+                <source>About us Title</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2taboutus_item">
+                <source> About us Items</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2taboutus_item.header">
+                <source>About us</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2taboutus_item.bodytext">
+                <source>About us Bodytext</source>
+            </trans-unit>
+
+            <trans-unit id="aboutus_icon_group_item.icon_file">
+                <source>Icon</source>
+            </trans-unit>
+
+
+            <trans-unit id="n2telement-ctasection">
+                <source>N2t Element Cta Section</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tctasection">
+                <source>N2t Cta Section</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tctasection_title">
+                <source>Cta Section Title</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2tctasection.description">
+                <source>N2t Cta Section description</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tctasection.ctasection_title">
+                <source>Cta Section Title</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2tctasection_item">
+                <source> Cta Section Items</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2tctasection_item.header">
+                <source>Cta Section </source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2tctasection_item.bodytext">
+                <source> Bodytext</source>
+            </trans-unit>
+
+            <trans-unit id="aboutus_icon_group_item.icon_file">
+                <source>Icon</source>
+            </trans-unit>
+
+
+            <trans-unit id="n2telement-gallerysection">
+                <source>N2t Element Gallery Section</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tgallerysection">
+                <source>N2t Gallery Section</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tgallerysection_title">
+                <source>Gallery Section Title</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2tgallerysection.description">
+                <source>N2t Gallery Section description</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tgallerysection.gallerysection_title">
+                <source>Gallery Section Title</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2tgallerysection_item">
+                <source>Gallery Section Items</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2tgallerysection_item.header">
+                <source>Gallery Section </source>
+            </trans-unit>
+
+
+            <trans-unit id="gallerysection_icon_group_item.icon_file">
+                <source>Icon</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2ttestimonialslider">
+                <source>N2t Testimonial Slider</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2ttestimonialslider.description">
+                <source>N2t Testimonial Slider description</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2ttestimonialslider_item.header">
+                <source>Name</source>
+            </trans-unit>
+
+            <trans-unit id="tx_kindergartensitepackage_n2ttestimonialslider_item.bodytext">
+                <source>Message</source>
+            </trans-unit>
+
+
+            <trans-unit id="testimonialslider_icon_group_item.icon_file">
+                <source>Icon</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tupcomingevent">
+                <source>N2t Upcoming Event Section</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2tupcomingevent.description">
+                <source>N2t Upcoming Event Section</source>
+            </trans-unit>
+
+            <trans-unit id="upcomingevent_icon_group_item.icon_file">
+                <source>Icon</source>
+            </trans-unit>
+
+            <trans-unit id="kindergartensitepackage.n2tclasses">
+                <source>N2t Classes Section</source>
+            </trans-unit>
+
+
+            <trans-unit id="kindergartensitepackage.n2tclasses.description">
+                <source>N2t Classes Section</source>
+            </trans-unit>
+
+            <trans-unit id="classes_icon_group_item.icon_file">
+                <source>Classes Icon</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,41 @@
+# CType:n2taboutus
+tt_content.n2taboutus =< lib.contentElement
+tt_content.n2taboutus {
+    templateName = N2tAboutus
+    
+
+    dataProcessing {
+
+        # Optional FlexForm
+        10 = BK2K\BootstrapPackage\DataProcessing\FlexFormProcessor
+
+        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        20 {
+            table = tx_kindergartensitepackage_n2taboutus_item
+            pidInList.field = pid
+
+            where {
+                data = field:uid
+                intval = 1
+                wrap = tt_content=|
+            }
+
+            orderBy = sorting
+            as = items
+
+            # 🔥 REQUIRED IN TYPO3 v12
+            selectFields = *
+
+            dataProcessing {
+
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references.table =tx_kindergartensitepackage_n2taboutus_item
+                    references.fieldName = icon_file
+                    as = images
+                }
+
+            }
+        }
+    }
+}

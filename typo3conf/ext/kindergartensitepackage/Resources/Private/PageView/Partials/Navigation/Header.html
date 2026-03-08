@@ -1,0 +1,61 @@
+<!-- ============================= -->
+<!-- TOP BAR (FIXED VERSION) -->
+<!-- ============================= -->
+
+<div class="topbar-wrapper py-1">
+    <div class="container">
+        <div class="topbar">
+
+            <!-- LEFT SIDE (Address + Phone) -->
+            <div class="topbar-left">
+
+                <span class="topbar-item me-4">
+                    <f:if condition="{settings.page.topbar.icon.address}">
+                        <f:image src="{settings.page.topbar.icon.address}" treatIdAsReference="1" alt="Address"
+                            class="topbar-icon" />
+                    </f:if>
+                    {settings.page.topbar.address}
+                </span>
+
+                <span class="topbar-item">
+                    <f:if condition="{settings.page.topbar.icon.phone}">
+                        <f:image src="{settings.page.topbar.icon.phone}" treatIdAsReference="1" alt="Phone"
+                            class="topbar-icon" />
+                    </f:if>
+                    Call: {settings.page.topbar.phone}
+                </span>
+
+            </div>
+
+            <!-- RIGHT SIDE (Social Icons) -->
+            <div class="topbar-right">
+
+                <f:if condition="{settings.page.topbar.facebook}">
+                    <a href="{settings.page.topbar.facebook}" class="topbar-social">
+                        <f:if condition="{settings.page.topbar.icon.facebook}">
+                            <f:image src="{settings.page.topbar.icon.facebook}" treatIdAsReference="1" alt="Facebook" />
+                        </f:if>
+                    </a>
+                </f:if>
+
+                <f:if condition="{settings.page.topbar.instagram}">
+                    <a href="{settings.page.topbar.instagram}" class="topbar-social">
+                        <f:if condition="{settings.page.topbar.icon.instagram}">
+                            <f:image src="{settings.page.topbar.icon.instagram}" treatIdAsReference="1" alt="Instagram" />
+                        </f:if>
+                    </a>
+                </f:if>
+
+                <f:if condition="{settings.page.topbar.twitter}">
+                    <a href="{settings.page.topbar.twitter}" class="topbar-social">
+                        <f:if condition="{settings.page.topbar.icon.twitter}">
+                            <f:image src="{settings.page.topbar.icon.twitter}" treatIdAsReference="1" alt="Twitter" />
+                        </f:if>
+                    </a>
+                </f:if>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<section id="events">
+    <div class="container padding-medium">
+        <div class="row flex-md-row-reverse align-items-center">
+
+            <!-- RIGHT SIDE : IMAGE -->
+            <div class="col-md-6">
+                <div class="imageblock">
+                    <div class="animated-border">
+                        <f:for each="{data.tx_mask_event}" as="file">
+                            <f:media file="{file}" class="img-fluid rounded-circle" />
+                        </f:for>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEFT SIDE : EVENTS LIST -->
+            <div class="col-md-6 pe-lg-5 mt-5 mt-md-0">
+
+                <!-- Title -->
+                <div class="section-title">
+                    <h2 class="display-4 mb-5">
+                        {data.tx_mask_title}
+                    </h2>
+                </div>
+
+                <!-- Events Loop -->
+                <f:for each="{data.tx_mask_content}" as="data_item">
+
+                    <div class="border rounded-3 px-4 py-2 mb-3 me-lg-5 event-box">
+                        <div class="row">
+
+                            <!-- Day + Month -->
+                            <div class="col-2 ps-3">
+                                <h2 class="m-0 lh-sm event-title">
+                                    {data_item.tx_mask_day}
+                                </h2>
+                                <p class="m-0">
+                                    {data_item.tx_mask_month}
+                                </p>
+                            </div>
+
+                            <!-- Title + Time + Arrow -->
+                            <div class="col-10 d-flex justify-content-between align-items-center">
+
+                                <!-- Title + Time -->
+                                <f:link.typolink parameter="{data_item.tx_mask_link}" class="hover-color">
+                                    <div>
+                                        <h2 class="m-0 lh-sm event-title">
+                                            {data_item.tx_mask_title}
+                                        </h2>
+                                        <p class="m-0">
+                                            {data_item.tx_mask_time}
+                                        </p>
+                                    </div>
+                                </f:link.typolink>
+
+                                <!-- Arrow from MASK -->
+                                <f:link.typolink parameter="{data_item.tx_mask_link}" class="arrow-link">
+                                    <f:if condition="{data_item.tx_mask_arrow}">
+                                        <f:media file="{data_item.tx_mask_arrow.0}" class="event-arrow" width="25" />
+                                    </f:if>
+                                </f:link.typolink>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </f:for>
+
+            </div>
+        </div>
+    </div>
+</section>

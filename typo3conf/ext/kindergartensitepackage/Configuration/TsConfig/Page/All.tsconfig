@@ -1,0 +1,13 @@
+
+
+# New Content Element Wizard
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kindergartensitepackage/Configuration/TsConfig/Page/Elements/n2tTextImage.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kindergartensitepackage/Configuration/TsConfig/Page/Elements/n2tKeyFeature.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kindergartensitepackage/Configuration/TsConfig/Page/Elements/n2tAboutus.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kindergartensitepackage/Configuration/TsConfig/Page/Elements/n2tclasses.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kindergartensitepackage/Configuration/TsConfig/Page/Elements/n2tCtasection.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kindergartensitepackage/Configuration/TsConfig/Page/Elements/n2tGallerysection.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kindergartensitepackage/Configuration/TsConfig/Page/Elements/n2tSwiperBanner.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kindergartensitepackage/Configuration/TsConfig/Page/Elements/n2tTeacher.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kindergartensitepackage/Configuration/TsConfig/Page/Elements/n2tUpcomingevent.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kindergartensitepackage/Configuration/TsConfig/Page/Elements/n2tTestimonialslider.tsconfig">

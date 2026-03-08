@@ -1,0 +1,62 @@
+<f:if condition="{data}">
+
+    <div class="mask-backend-preview">
+
+        <strong>Social Icons</strong>
+        <hr>
+
+        <!-- TOTAL RECORDS -->
+        <f:if condition="{data.tx_mask_images}">
+            <strong>Total Social Icon Records:</strong>
+            {data.tx_mask_images -> f:count()}
+            <br><br>
+        </f:if>
+
+        <!-- ICON PREVIEW -->
+        <f:if condition="{data.tx_mask_images}">
+            <strong>Icon Preview:</strong>
+            <br><br>
+
+            <div style="display:flex; flex-wrap:wrap; gap:12px;">
+
+                <f:for each="{data.tx_mask_images}" as="item" iteration="i">
+
+                    <f:if condition="{item.tx_mask_picture}">
+                        <f:for each="{item.tx_mask_picture}" as="file">
+
+                            <div style="
+                                width:60px;
+                                height:60px;
+                                border:1px solid #ddd;
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                background:#fafafa;
+                            ">
+
+                                <f:media
+                                    file="{file}"
+                                    width="24"
+                                    height="24"
+                                    alt="{file.alternative}"
+                                />
+
+                            </div>
+
+                        </f:for>
+                    </f:if>
+
+                </f:for>
+
+            </div>
+
+            <br>
+        </f:if>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{data} == 0">
+    <em>No social icons added yet.</em>
+</f:if>

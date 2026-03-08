@@ -1,0 +1,117 @@
+<f:if condition="{data}">
+
+    <div class="mask-backend-preview">
+
+        <strong>Events Section</strong>
+        <hr>
+
+        <!-- MAIN EVENT IMAGE PREVIEW -->
+        <f:if condition="{data.tx_mask_event}">
+            <strong>Main Event Image(s):</strong>
+            {data.tx_mask_event -> f:count()}
+            <br><br>
+
+            <div style="display:flex; gap:10px; margin-bottom:15px;">
+                <f:for each="{data.tx_mask_event}" as="file">
+                    <div style="
+                        width:90px;
+                        height:90px;
+                        border:1px solid #ddd;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        background:#fafafa;
+                        border-radius:50%;
+                    ">
+                        <f:media
+                            file="{file}"
+                            width="80"
+                            height="80"
+                            alt="{file.alternative}"
+                        />
+                    </div>
+                </f:for>
+            </div>
+        </f:if>
+
+        <!-- SECTION TITLE -->
+        <f:if condition="{data.tx_mask_title}">
+            <strong>Section Title:</strong>
+            <f:format.stripTags>
+                {data.tx_mask_title}
+            </f:format.stripTags>
+            <br><br>
+        </f:if>
+
+        <!-- TOTAL EVENTS -->
+        <f:if condition="{data.tx_mask_content}">
+            <strong>Total Events:</strong>
+            {data.tx_mask_content -> f:count()}
+            <br><br>
+        </f:if>
+
+        <!-- TABLE HEADER -->
+        <div style="
+            display:flex;
+            font-weight:bold;
+            border-bottom:2px solid #ccc;
+            padding-bottom:6px;
+            margin-bottom:10px;
+        ">
+            <div style="width:70px;">Date</div>
+            <div style="flex:2;">Title</div>
+            <div style="flex:1;">Time</div>
+            <div style="width:60px;">Arrow</div>
+        </div>
+
+        <!-- EVENT ROWS -->
+        <f:for each="{data.tx_mask_content}" as="item" iteration="i">
+
+            <div style="
+                display:flex;
+                align-items:center;
+                border-bottom:1px solid #eee;
+                padding:8px 0;
+            ">
+
+                <!-- DAY + MONTH -->
+                <div style="width:70px;">
+                    <strong>{item.tx_mask_day}</strong><br>
+                    <small>{item.tx_mask_month}</small>
+                </div>
+
+                <!-- TITLE -->
+                <div style="flex:2;">
+                    <f:format.stripTags>
+                        {item.tx_mask_title}
+                    </f:format.stripTags>
+                </div>
+
+                <!-- TIME -->
+                <div style="flex:1;">
+                    {item.tx_mask_time}
+                </div>
+
+                <!-- ARROW IMAGE -->
+                <div style="width:60px;">
+                    <f:if condition="{item.tx_mask_arrow}">
+                        <f:media
+                            file="{item.tx_mask_arrow.0}"
+                            width="20"
+                            height="20"
+                            alt="Arrow"
+                        />
+                    </f:if>
+                </div>
+
+            </div>
+
+        </f:for>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{data} == 0">
+    <em>No events added yet.</em>
+</f:if>

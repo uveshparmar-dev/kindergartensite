@@ -1,0 +1,77 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section id="testimonial" class="jarallax testimonial-section" data-speed="0.4">
+
+	<!-- Background Image for Jarallax -->
+	<f:if condition="{data.background_image}">
+		<div class="jarallax-img" style="background-image:url('{data.background_image.0.originalFile.publicUrl}');">
+		</div>
+	</f:if>
+
+	<div class="container padding-medium">
+
+		<div class="offset-md-1 col-md-10">
+
+			<div class="swiper testimonial-swiper py-3 py-md-5 bg-white rounded-4">
+
+				<div class="swiper-wrapper">
+
+					<!-- LOOP TESTIMONIAL ITEMS -->
+					<f:for each="{data.testimonials}" as="item">
+
+						<div class="swiper-slide">
+							<div class="review px-md-5">
+
+								<div class="review-content px-5 d-lg-flex align-items-center">
+
+									<!-- CLIENT IMAGE -->
+									<f:if condition="{item.person_image}">
+										<f:image image="{item.person_image.0}" alt="{item.name}"
+											class="img-fluid rounded-circle" />
+									</f:if>
+
+									<!-- TEXT CONTENT -->
+									<div class="ms-md-4 mt-3 mt-lg-0 testimonial-text">
+
+										<f:if condition="{item.description}">
+											<f:format.raw>
+												{item.description}
+											</f:format.raw>
+										</f:if>
+
+										<f:if condition="{item.name}">
+											<h2 class="name m-0 lh-sm">
+												{item.name}
+											</h2>
+										</f:if>
+
+										<f:if condition="{item.role}">
+											<p class="m-0">
+												{item.role}
+											</p>
+										</f:if>
+
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+
+					</f:for>
+					<!-- END LOOP -->
+
+				</div>
+
+				<!-- PAGINATION -->
+				<div class="swiper-pagination position-relative pt-4 pt-md-5"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</section>
+
+</html>

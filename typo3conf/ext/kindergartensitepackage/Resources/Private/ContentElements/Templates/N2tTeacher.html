@@ -1,0 +1,53 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section id="teacher">
+    <div class="container padding-medium pt-0">
+
+        <!-- Heading -->
+        <f:if condition="{data.header}">
+            <h2 class="display-4 text-center mb-5">
+                {data.header}
+            </h2>
+        </f:if>
+
+        <div class="row">
+
+            <!-- Loop teacher items -->
+            <f:for each="{items}" as="item">
+                <div class="col-md-6 col-lg-3 my-4 my-lg-0">
+                    <div class="text-center">
+
+                        <!-- IMAGE -->
+                        <f:if condition="{item.images.0}">
+                            <a href="{f:if(condition: item.data.link, then: item.data.link, else: '#')}">
+                                <img src="{item.images.0.originalFile.publicUrl}" class="img-fluid rounded-4"
+                                    alt="{item.data.header}" loading="lazy" />
+                            </a>
+                        </f:if>
+
+                        <!-- NAME -->
+                        <f:if condition="{item.data.header}">
+                            <a href="{f:if(condition: item.data.link, then: item.data.link, else: '#')}"
+                                class="hover-color">
+                                <h2 class="mt-3">
+                                    {item.data.header}
+                                </h2>
+                            </a>
+                        </f:if>
+
+                        <!-- JOB TITLE / DESCRIPTION -->
+                        <f:if condition="{item.data.bodytext}">
+                            <p class="m-0">
+                                {item.data.bodytext}
+                            </p>
+                        </f:if>
+
+                    </div>
+                </div>
+            </f:for>
+
+        </div>
+    </div>
+</section>
+
+</html>

@@ -1,0 +1,5 @@
+news.view {
+    layoutRootPath = EXT:kindergartensitepackage/Resources/Private/Extensions/News/Layouts/
+    partialRootPath = EXT:kindergartensitepackage/Resources/Private/Extensions/News/Partials/
+    templateRootPath = EXT:kindergartensitepackage/Resources/Private/Extensions/News/Templates/
+}

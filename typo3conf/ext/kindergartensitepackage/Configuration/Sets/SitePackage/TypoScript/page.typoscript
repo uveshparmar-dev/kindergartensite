@@ -1,0 +1,42 @@
+page = PAGE
+page {
+    typeNum = 0
+    shortcutIcon = EXT:kindergartensitepackage/Resources/Public/Icons/main-logo.png
+
+    10 = PAGEVIEW
+    10 {
+        forceTemplateVars = 1
+
+        paths {
+            0 = EXT:kindergartensitepackage/Resources/Private/PageView/
+        }
+
+        variables {
+            rootPage = TEXT
+            rootPage.data = site:rootPageId
+        }
+
+        dataProcessing {
+            10 = page-content
+
+            20 = menu
+            20 {
+                levels = 2
+                includeSpacer = 1
+                as = mainnavigation
+            }
+        }
+    }
+
+    includeCSS {
+        site_layout = EXT:kindergartensitepackage/Resources/Public/Css/layout.css
+      
+    }
+
+    includeJSFooter {
+        jquery = EXT:kindergartensitepackage/Resources/Public/JavaScript/jquery.min.js
+        mainjs = EXT:kindergartensitepackage/Resources/Public/JavaScript/main.js
+    }
+}
+
+

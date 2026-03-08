@@ -1,0 +1,75 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div style="padding:15px;">
+
+    <!-- Clickable Title -->
+    <be:link.editRecord uid="{data.uid}" table="tt_content">
+        <h3 style="margin-bottom:5px;">
+            N2t Teacher
+        </h3>
+    </be:link.editRecord>
+
+    <!-- Section Heading -->
+    <f:if condition="{data.net2typo_teacherssection_header}">
+        <p style="margin:0 0 10px 0;">
+            {data.net2typo_teacherssection_header}
+        </p>
+    </f:if>
+
+    <!-- Total Count -->
+    <p>
+        <strong>Total Teachers:</strong>
+        {data.net2typo_teachersection_educator_items -> f:count()}
+    </p>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+
+        <thead>
+            <tr style="text-align:left; border-bottom:1px solid #ccc;">
+                <th style="padding:8px;">Image</th>
+                <th style="padding:8px;">Teacher Name</th>
+                <th style="padding:8px;">Designation</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <f:for each="{data.net2typo_teachersection_educator_items}" as="item">
+
+                <tr style="border-bottom:1px solid #eee;">
+
+                    <!-- IMAGE -->
+                    <td style="padding:12px;">
+                        <be:link.editRecord uid="{data.uid}" table="tt_content">
+                            <f:if condition="{item.image.0}">
+                                <f:image image="{item.image.0}" width="70" />
+                            </f:if>
+                        </be:link.editRecord>
+                    </td>
+
+                    <!-- NAME -->
+                    <td style="padding:12px;">
+                        <be:link.editRecord uid="{data.uid}" table="tt_content">
+                            <strong>{item.header}</strong>
+                        </be:link.editRecord>
+                    </td>
+
+                    <!-- DESIGNATION -->
+                    <td style="padding:12px;">
+                        <be:link.editRecord uid="{data.uid}" table="tt_content">
+                            {item.subheader}
+                        </be:link.editRecord>
+                    </td>
+
+                </tr>
+
+            </f:for>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</html>

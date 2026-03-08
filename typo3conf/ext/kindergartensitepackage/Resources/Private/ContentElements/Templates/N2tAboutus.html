@@ -1,0 +1,54 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section id="about-us">
+
+    <div class="container padding-medium pt-0">
+        <div class="row align-items-center">
+
+            <f:for each="{items}" as="item">
+
+                <!-- LEFT IMAGE -->
+                <div class="col-md-6">
+                    <div class="imageblock me-md-5">
+                        <div class="animated-border">
+
+                            <f:if condition="{item.images.0}">
+                                <f:image image="{item.images.0}" class="img-fluid rounded-circle about-img"
+                                    alt="{item.header}" />
+                            </f:if>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT CONTENT -->
+                <div class="col-md-6 mt-5 mt-md-0">
+
+                    <div class="section-title">
+                        <h2 class="display-4 mb-3">
+                            {item.data.header}
+                        </h2>
+                    </div>
+
+                    <div class="about-description">
+                        <f:format.raw>
+                            {item.data.bodytext}
+                        </f:format.raw>
+                    </div>
+                    <f:if condition="{item.data.buttontext}">
+                        <a href="{f:if(condition: item.data.button_link, then: item.data.button_link, else: '#')}"
+                            class="btn btn-primary mt-3">
+                            {item.data.buttontext}
+                        </a>
+                    </f:if>
+
+
+                </div>
+
+            </f:for>
+
+        </div>
+    </div>
+</section>
+
+</html>

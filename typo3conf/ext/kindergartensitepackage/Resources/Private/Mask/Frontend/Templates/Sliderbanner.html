@@ -1,0 +1,32 @@
+    <div class="hero-slider">
+
+        <f:for each="{data.tx_mask_img}" as="file" iteration="i">
+
+            <div class="hero-slide d-flex position-relative
+                {f:if(condition: i.isFirst, then: 'active')}
+            "
+            style="
+                background-image:url('{file.publicUrl}');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 80vh;
+            "
+            >
+
+            
+                <div class="hero-content text-center">
+                    <h2 class="hero-title banner-title display-1 text-white mb-4">
+                        <f:if condition="{data.tx_mask_text}">
+                            {data.tx_mask_text -> f:format.raw()}
+                        </f:if>
+                    </h2>
+
+                    <a href="#" class="btn btn-primary mt-3">ABOUT US</a>
+                </div>
+
+            </div>
+
+        </f:for>
+
+    </div>

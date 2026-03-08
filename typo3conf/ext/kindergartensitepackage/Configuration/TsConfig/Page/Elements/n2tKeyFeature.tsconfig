@@ -1,0 +1,22 @@
+mod.wizards.newContentElement.wizardItems.common{
+      header = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_db.xlf:n2telement
+    elements {
+        n2tkeyfeature {
+            iconIdentifier = content-text
+            title = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_db.xlf:kindergartensitepackage.n2tkeyfeature
+            description = Key Feature Description
+            tt_content_defValues {
+                CType = n2tkeyfeature
+            }
+        }
+    }
+    show := addToList(n2tkeyfeature)
+}
+
+
+
+mod.web_layout.tt_content{
+    preview {
+        n2tkeyfeature = EXT:kindergartensitepackage/Resources/Private/ContentElements/Templates/Preview/N2tKeyFeature.html
+    }
+}

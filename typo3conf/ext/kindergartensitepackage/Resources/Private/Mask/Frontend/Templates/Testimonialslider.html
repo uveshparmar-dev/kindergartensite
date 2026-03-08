@@ -1,0 +1,66 @@
+<section id="testimonial"
+         class="jarallax testimonial-section"
+         data-jarallax
+         data-speed="0.4">
+
+    <!-- FULL-WIDTH BACKGROUND IMAGE -->
+    <f:for each="{data.tx_mask_test_image}" as="file">
+        <div class="jarallax-img" style="background-image:url('{file.publicUrl}');"></div>
+    </f:for>
+
+    <div class="container padding-medium">
+
+        <div class="offset-md-1 col-md-10">
+            <div class="swiper testimonial-swiper py-3 py-md-5 bg-white rounded-4">
+
+                <div class="swiper-wrapper">
+
+                    <!-- REPEAT TESTIMONIAL ITEMS -->
+                    <f:for each="{data.tx_mask_testimonial}" as="item">
+
+                        <div class="swiper-slide">
+                            <div class="review px-md-5">
+                                <div class="review-content px-5 d-lg-flex align-items-center">
+
+                                    <!-- CLIENT IMAGE -->
+                                    <f:for each="{item.tx_mask_client_image}" as="clientImg">
+                                        <img src="{clientImg.publicUrl}"
+                                             alt="{item.tx_mask_client_name}"
+                                             class="img-fluid rounded-circle">
+                                           
+                                    </f:for>
+
+                                    <!-- TEXT CONTENT -->
+                                    <div class="ms-md-4 mt-3 mt-lg-0 testimonial-text">
+
+                                        <f:if condition="{item.tx_mask_client_message}">
+                                            <p>{item.tx_mask_client_message -> f:format.html()}</p>
+                                        </f:if>
+
+                                        <f:if condition="{item.tx_mask_client_name}">
+                                            <h2 class="name m-0 lh-sm">{item.tx_mask_client_name}</h2>
+                                        </f:if>
+
+                                        <f:if condition="{item.tx_mask_client_role}">
+                                            <p class="m-0">{item.tx_mask_client_role}</p>
+                                        </f:if>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </f:for>
+                    <!-- END LOOP -->
+
+                </div>
+
+                <!-- PAGINATION -->
+                <div class="swiper-pagination position-relative pt-4 pt-md-5"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>

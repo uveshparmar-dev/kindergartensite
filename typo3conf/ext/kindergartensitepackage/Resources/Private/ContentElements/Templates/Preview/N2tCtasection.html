@@ -1,0 +1,90 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tctasection_item}">
+
+    <div style="padding:15px;">
+
+        <strong>CTA Section</strong>
+        <hr>
+
+        <strong>Total Items:</strong>
+        {record.tx_kindergartensitepackage_n2tctasection_item -> f:count()}
+        <br><br>
+
+        <f:for each="{record.tx_kindergartensitepackage_n2tctasection_item}" as="item">
+
+
+
+            <div style="margin-bottom:15px; cursor:pointer;">
+
+                <!-- Image Count -->
+                <be:link.editRecord table="tt_content" uid="{record.uid}">
+                    <strong>Background Image(s):</strong>
+                    {item.icon_file -> f:count()}
+                    <br><br>
+                </be:link.editRecord>
+
+                <!-- Image -->
+                <f:if condition="{item.icon_file.0}">
+                    <be:link.editRecord table="tt_content" uid="{record.uid}">
+                        <f:image image="{item.icon_file.0}" width="120" height="80" />
+                        <br><br>
+                    </be:link.editRecord>
+                </f:if>
+
+                <!-- Heading -->
+                <f:if condition="{item.header}">
+                    <be:link.editRecord table="tt_content" uid="{record.uid}">
+                        <strong>Heading:</strong>
+                        {item.header}
+                        <br><br>
+                    </be:link.editRecord>
+                </f:if>
+
+                <!-- Description -->
+                <f:if condition="{item.bodytext}">
+                    <be:link.editRecord table="tt_content" uid="{record.uid}">
+                        <strong>Description:</strong>
+                        <div style="margin-top:5px;">
+                            <f:format.stripTags>{item.bodytext}</f:format.stripTags>
+                        </div>
+                        <br>
+                    </be:link.editRecord>
+                </f:if>
+
+                <!-- Button -->
+                <f:if condition="{item.buttontext}">
+                    <be:link.editRecord table="tt_content" uid="{record.uid}">
+                        <strong>Button:</strong>
+                        {item.buttontext}
+                        <br>
+                    </be:link.editRecord>
+                </f:if>
+
+                <!-- Button Link -->
+                <f:if condition="{item.button_link}">
+                    <be:link.editRecord table="tt_content" uid="{record.uid}">
+                        <strong>Button Link:</strong>
+                        <f:uri.typolink parameter="{item.button_link}" />
+                        <br>
+                    </be:link.editRecord>
+                </f:if>
+
+            </div>
+
+
+
+            <hr>
+
+        </f:for>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tctasection_item -> f:count()} == 0">
+    <em>No CTA items added yet.</em>
+</f:if>
+
+</html>

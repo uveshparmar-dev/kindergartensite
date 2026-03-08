@@ -1,0 +1,28 @@
+<section id="categories">
+    <f:if condition="{data.tx_mask_category}">
+        <div class="container padding-medium">
+            <div class="row">
+
+                <f:for each="{data.tx_mask_category}" as="data_item" iteration="i">
+                    <div class="col my-4 my-lg-0 text-center">
+                        <a href="#" class="categories-item">
+
+
+                            <div class="category-icon text-white p-5 rounded-circle"
+                                style="background-color:{data_item.tx_mask_color};">
+
+                                <f:for each="{data_item.tx_mask_image}" as="file">
+                                    <f:media file="{file}" width="60" />
+                                </f:for>
+                            </div>
+
+                            <h2>{data_item.tx_mask_text -> f:format.html()}</h2>
+
+                        </a>
+                    </div>
+                </f:for>
+
+            </div>
+        </div>
+    </f:if>
+</section>

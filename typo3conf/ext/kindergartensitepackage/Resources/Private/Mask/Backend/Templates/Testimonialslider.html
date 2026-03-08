@@ -1,0 +1,116 @@
+<f:if condition="{data}">
+
+    <div class="mask-backend-preview">
+
+        <strong>Testimonials Section</strong>
+        <hr>
+
+        <!-- BACKGROUND IMAGE PREVIEW -->
+        <f:if condition="{data.tx_mask_test_image}">
+            <strong>Background Image(s):</strong>
+            {data.tx_mask_test_image -> f:count()}
+            <br><br>
+
+            <div style="display:flex; gap:10px; margin-bottom:15px;">
+                <f:for each="{data.tx_mask_test_image}" as="bg" iteration="i">
+                    <div style="
+                        width:120px;
+                        height:70px;
+                        border:1px solid #ddd;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        background:#fafafa;
+                    ">
+                        <f:media
+                            file="{bg}"
+                            width="120"
+                            height="70"
+                            alt="{bg.alternative}"
+                        />
+                    </div>
+                </f:for>
+            </div>
+        </f:if>
+
+        <!-- TOTAL TESTIMONIALS -->
+        <f:if condition="{data.tx_mask_testimonial}">
+            <strong>Total Testimonials:</strong>
+            {data.tx_mask_testimonial -> f:count()}
+            <br><br>
+        </f:if>
+
+        <!-- TABLE HEADER -->
+        <div style="
+            display:flex;
+            font-weight:bold;
+            border-bottom:2px solid #ccc;
+            padding-bottom:6px;
+            margin-bottom:10px;
+        ">
+            <div style="width:90px;">Image</div>
+            <div style="flex:2;">Message</div>
+            <div style="flex:1;">Name</div>
+            <div style="flex:1;">Role</div>
+        </div>
+
+        <!-- TESTIMONIAL ROWS -->
+        <f:for each="{data.tx_mask_testimonial}" as="item" iteration="i">
+
+            <div style="
+                display:flex;
+                align-items:center;
+                border-bottom:1px solid #eee;
+                padding:10px 0;
+            ">
+
+                <!-- CLIENT IMAGE -->
+                <div style="width:90px;">
+                    <f:if condition="{item.tx_mask_client_image}">
+                        <f:for each="{item.tx_mask_client_image}" as="file" iteration="img">
+                            <f:if condition="{img.isFirst}">
+                                <f:media
+                                    file="{file}"
+                                    width="70"
+                                    height="70"
+                                    alt="{file.alternative}"
+                                />
+                            </f:if>
+                        </f:for>
+                    </f:if>
+                </div>
+
+                <!-- MESSAGE -->
+                <div style="flex:2; padding-right:10px;">
+                    <f:if condition="{item.tx_mask_client_message}">
+                        <f:format.stripTags>
+                            {item.tx_mask_client_message}
+                        </f:format.stripTags>
+                    </f:if>
+                </div>
+
+                <!-- NAME -->
+                <div style="flex:1;">
+                    <f:format.stripTags>
+                        {item.tx_mask_client_name}
+                    </f:format.stripTags>
+                </div>
+
+                <!-- ROLE -->
+                <div style="flex:1;">
+                    <f:format.stripTags>
+                        {item.tx_mask_client_role}
+                    </f:format.stripTags>
+                </div>
+
+            </div>
+
+        </f:for>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{data} == 0">
+    <em>No testimonials added yet.</em>
+</f:if>

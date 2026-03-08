@@ -1,0 +1,92 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section id="classes">
+	<div class="padding-medium">
+
+		<!-- MAIN HEADING -->
+		<f:if condition="{data.header}">
+			<div class="card-body">
+				<h2 class="display-4 text-center mb-5">
+					{data.header}
+				</h2>
+			</div>
+		</f:if>
+
+		<!-- SWIPER -->
+		<div class="swiper classes-swiper">
+			<div class="swiper-wrapper">
+
+				<!-- LOOP CLASSES -->
+				<f:for each="{data.net2typo_classes_classes}" as="item">
+
+					<div class="swiper-slide">
+						<div class="card bg-transparent border-0">
+
+							<!-- IMAGE -->
+							<div class="zoom-effect rounded-4">
+								<f:if condition="{item.image.0}">
+									<f:image image="{item.image.0}" class="img-fluid" alt="{item.title}" />
+								</f:if>
+							</div>
+
+							<div class="card-body p-0">
+
+								<!-- CLASS TITLE -->
+								<h2 class="mt-3">
+									{item.title}
+								</h2>
+
+								<div class="card-text">
+									<div class="d-flex">
+
+										<!-- AGE -->
+										<div class="pe-4 border-end border-2">
+											<p class="text-primary fw-medium fs-4 m-0">
+												{item.age}
+											</p>
+											<p class="m-0 text">
+												Years Old
+											</p>
+										</div>
+
+										<!-- CLASS SIZE -->
+										<div class="ps-4 pe-4 border-end border-2">
+											<p class="text-primary fw-medium fs-4 m-0">
+												{item.class_size}
+											</p>
+											<p class="m-0 text">
+												Class-Size
+											</p>
+										</div>
+
+										<!-- PRICE -->
+										<div class="ps-4 pe-4">
+											<p class="text-primary fw-medium fs-4 m-0">
+												{item.price}
+											</p>
+											<p class="m-0 text">
+												Pricing
+											</p>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+				</f:for>
+
+			</div>
+
+			<!-- PAGINATION -->
+			<div class="swiper-pagination pt-5 mt-3"></div>
+
+		</div>
+
+	</div>
+</section>
+
+</html>

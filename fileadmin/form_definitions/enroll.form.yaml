@@ -1,0 +1,41 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+type: Form
+identifier: enroll
+label: enroll
+prototypeName: standard
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: ''
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: ''
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Parents name'
+          elementDescription: ''
+      -
+        defaultValue: ''
+        type: Telephone
+        identifier: telephone-1
+        label: ''
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Contact phone'
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: ''
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Your message'

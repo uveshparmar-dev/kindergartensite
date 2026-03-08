@@ -1,0 +1,98 @@
+@import './TypoScript/'
+
+
+
+@import 'EXT:kindergartensitepackage/Configuration/Sets/SitePackage/TypoScript/OverrideExtension/news.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Sets/SitePackage/TypoScript/OverrideExtension/form.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Sets/SitePackage/TypoScript/OverrideExtension/indexed_search.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Sets/SitePackage/TypoScript/OverrideExtension/powermail.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Sets/SitePackage/TypoScript/OverrideExtension/we_cookie_consent.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Sets/SitePackage/TypoScript/constants.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Sets/SitePackage/TypoScript/Helper/DynamicContent.typoscript'
+@import 'EXT:we_cookie_consent/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:we_cookie_consent/Configuration/TypoScript/constants.typoscript'
+
+
+config.contentObjectExceptionHandler = 0
+
+plugin.tx_wecookieconsent_pi1 {
+  settings {
+    klaro {
+      privacyPolicy = 41
+      hideLearnMore = 1
+    }
+  }
+}
+
+
+####################################
+# MAIN NAVIGATION MENU
+####################################
+
+lib.mainMenu = HMENU
+lib.mainMenu {
+    entryLevel = 0
+
+    1 = TMENU
+    1 {
+        wrap = <ul class="main-menu">|</ul>
+
+        NO = 1
+        NO {
+            wrapItemAndSub = <li>|</li>
+            ATagTitle.field = title
+        }
+
+        CUR = 1
+        CUR {
+            wrapItemAndSub = <li class="active">|</li>
+        }
+
+        IFSUB = 1
+        IFSUB.wrapItemAndSub = <li class="has-sub">|</li>
+    }
+
+    2 < .1
+}
+
+config {
+    index_enable = 1
+    index_externals = 1
+    no_cache = 0
+}
+
+plugin.tx_indexedsearch {
+  settings {
+    targetPid = 34
+    disableSearchFormSubmitOnChange = 0
+    allowEmptyQuery = 0
+    showRules = 0
+  }
+}
+
+
+
+
+
+page.10.variables {
+  searchPageUrl = TEXT
+  searchPageUrl.typolink {
+    parameter = 34
+    returnLast = url
+  }
+}
+
+
+
+
+
+@import 'EXT:kindergartensitepackage/Configuration/Typoscript/ContentElement/N2tTextWithImage.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Typoscript/ContentElement/N2tKeyFeature.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Typoscript/ContentElement/N2tSwiperBanner.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Typoscript/ContentElement/N2tTeacher.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Typoscript/ContentElement/N2tAboutus.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Typoscript/ContentElement/N2tCtasection.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Typoscript/ContentElement/N2tGallerysection.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Typoscript/ContentElement/N2tTestimonialslider.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Typoscript/ContentElement/N2tUpcomingevent.typoscript'
+@import 'EXT:kindergartensitepackage/Configuration/Typoscript/ContentElement/N2tClasses.typoscript'

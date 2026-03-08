@@ -1,0 +1,51 @@
+mod.web_layout.BackendLayouts {
+    default >
+      default{
+        title = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_be.xlf:backend.footer.title
+        icon = EXT:kindergartensitepackage/Resources/Public/Icons/main-logo.png
+
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 3
+
+                rows {
+
+                    
+                    1 {
+                        columns {
+                            1 {
+                                name = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_be.xlf:backend_layout.column.banner
+                                colPos = 0
+                                identifier = banner
+                            }
+                        }
+                    }
+
+                    
+                    2 {
+                        columns {
+                            1 {
+                                name = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_be.xlf:backend.main.content
+                                colPos = 1
+                                identifier = maincontent
+                            }
+                        }
+                    }
+
+                
+                    3 {
+                        columns {
+                            1 {
+                                name = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_be.xlf:backend.footer
+                                colPos = 10
+                                identifier = footer
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

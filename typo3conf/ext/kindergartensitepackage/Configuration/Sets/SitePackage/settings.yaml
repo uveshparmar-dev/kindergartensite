@@ -1,0 +1,10 @@
+styles:
+  templates:
+    layoutRootPath: 'EXT:kindergartensitepackage/Resources/Private/ContentElements/Layouts/'
+    partialRootPath: 'EXT:kindergartensitepackage/Resources/Private/ContentElements/Partials/'
+    templateRootPath: 'EXT:kindergartensitepackage/Resources/Private/ContentElements/Templates/'
+
+
+page:
+  pageview:
+    paths: 'EXT:kindergartensitepackage/Resources/Private/PageView/'

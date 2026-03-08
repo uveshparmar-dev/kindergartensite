@@ -1,0 +1,8 @@
+name: net2typo/kindergartensitepackage
+label: 'kindergartensitepackage'
+
+dependencies:
+  - typo3/fluid-styled-content
+  - typo3/fluid-styled-content-css
+
+

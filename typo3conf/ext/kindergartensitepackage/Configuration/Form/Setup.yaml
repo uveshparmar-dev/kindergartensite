@@ -1,0 +1,51 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          110: EXT:bootstrap_package/Resources/Private/Forms/
+
+      prototypes:
+        standard:
+          formElementsDefinition:
+
+            Form:
+              renderingOptions:
+                translation:
+                  translationFiles:
+                    110: 'EXT:kindergartensitepackage/Resources/Private/Language/locallang.xlf'
+
+                layoutRootPaths:
+                  100: 'EXT:kindergartensitepackage/Resources/Private/Extensions/Form/Layouts/'
+                templateRootPaths:
+                  100: 'EXT:kindergartensitepackage/Resources/Private/Extensions/Form/Templates/'
+                partialRootPaths:
+                  100: 'EXT:kindergartensitepackage/Resources/Private/Extensions/Form/Partials/'
+
+            Text:
+              renderingOptions:
+                showLabel: false
+              properties:
+                elementClassAttribute: 'w-100 border ps-4 py-2 rounded-3'
+
+            Telephone:
+              renderingOptions:
+                showLabel: false
+              properties:
+                elementClassAttribute: 'w-100 border ps-4 py-2 rounded-3'
+
+            Textarea:
+              renderingOptions:
+                showLabel: false
+              properties:
+                elementClassAttribute: 'w-100 border ps-4 py-2 rounded-3'
+
+            Submit:
+              properties:
+                elementClassAttribute: 'btn btn-primary mt-3'
+
+            ImageUpload:
+              properties:
+                imageLinkMaxWidth: 1200
+                imageMaxWidth: 200
+                imageMaxHeight: 200

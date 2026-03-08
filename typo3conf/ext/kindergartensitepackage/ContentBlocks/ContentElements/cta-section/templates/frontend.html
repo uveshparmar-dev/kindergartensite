@@ -1,0 +1,50 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section id="cta" class="jarallax cta-section breakout" data-speed="0.4">
+
+	<!-- Background Image -->
+	<f:if condition="{data.background_image.0}">
+		<div class="jarallax-img" style="background-image:url('{f:uri.image(image: data.background_image.0)}');">
+		</div>
+	</f:if>
+
+	<div class="container padding-medium">
+		<div class="offset-md-3 col-md-6 text-center">
+
+			<div class="section-title">
+
+				<!-- Heading -->
+				<f:if condition="{data.header}">
+					<h2 class="display-4 mb-3 banner-title">
+						<f:format.stripTags>
+							{data.header}
+						</f:format.stripTags>
+					</h2>
+				</f:if>
+
+				<!-- Description -->
+				<f:if condition="{data.bodytext}">
+					<div class="banner-description">
+						<f:format.raw>
+							{data.bodytext}
+						</f:format.raw>
+					</div>
+				</f:if>
+
+				<!-- Button -->
+				<f:if condition="{data.header_link}">
+					<f:link.typolink parameter="{data.header_link}" class="btn btn-primary mt-4">
+						<f:if condition="{data.subheader}">
+							{data.subheader}
+						</f:if>
+					</f:link.typolink>
+				</f:if>
+
+			</div>
+
+		</div>
+	</div>
+
+</section>
+
+</html>

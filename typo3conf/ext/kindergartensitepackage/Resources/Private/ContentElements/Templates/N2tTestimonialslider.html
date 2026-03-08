@@ -1,0 +1,80 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section id="testimonial" class="jarallax testimonial-section" data-jarallax data-speed="0.4">
+
+    <!-- BACKGROUND IMAGE -->
+    <f:if condition="{backgroundImages}">
+        <f:for each="{backgroundImages}" as="bg">
+            <div class="jarallax-img" style="background-image:url('{bg.publicUrl}');">
+            </div>
+        </f:for>
+    </f:if>
+
+    <div class="container padding-medium">
+
+        <div class="offset-md-1 col-md-10">
+            <div class="swiper testimonial-swiper py-3 py-md-5 bg-white rounded-4">
+
+                <div class="swiper-wrapper">
+
+                    <!-- LOOP TESTIMONIAL ITEMS -->
+                    <f:for each="{items}" as="item">
+
+                        <div class="swiper-slide">
+                            <div class="review px-md-5">
+                                <div class="review-content px-5 d-lg-flex align-items-center">
+
+                                    <!-- CLIENT IMAGE -->
+                                    <f:if condition="{item.images}">
+                                        <f:for each="{item.images}" as="img">
+                                            <img src="{img.publicUrl}" alt="{item.name}"
+                                                class="img-fluid rounded-circle">
+                                        </f:for>
+                                    </f:if>
+
+                                   
+                                    <!-- TEXT CONTENT -->
+                                    <div class="ms-md-4 mt-3 mt-lg-0 testimonial-text">
+
+                                        <f:if condition="{item.data.bodytext}">
+                                            <div>
+                                                <f:format.raw>
+                                                    {item.data.bodytext}
+                                                </f:format.raw>
+                                            </div>
+                                        </f:if>
+
+                                        <f:if condition="{item.data.name}">
+                                            <h2 class="name m-0 lh-sm">
+                                                {item.data.name}
+                                            </h2>
+                                        </f:if>
+
+                                        <f:if condition="{item.data.role}">
+                                            <p class="m-0">
+                                                {item.data.role}
+                                            </p>
+                                        </f:if>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </f:for>
+                    <!-- END LOOP -->
+
+                </div>
+
+                <div class="swiper-pagination position-relative pt-4 pt-md-5"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+</html>

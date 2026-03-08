@@ -1,0 +1,66 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+
+
+<!-- ========================= -->
+<!-- PARENT CONTENT ELEMENT -->
+<!-- ========================= -->
+
+<div class="n2ttextimage">
+
+    <!-- Main header -->
+    <f:if condition="{data.header}">
+        <h1 class="ce-header">
+            {data.header}
+        </h1>
+    </f:if>
+
+    <!-- Subheader -->
+    <f:if condition="{data.subheader}">
+        <p class="ce-subheader">
+            {data.subheader}
+        </p>
+    </f:if>
+
+    <!-- Custom title field -->
+    <f:if condition="{data.n2ttextimage_title}">
+        <h2 class="ce-title">
+            {data.n2ttextimage_title}
+        </h2>
+    </f:if>
+
+    <!-- ========================= -->
+    <!-- CHILD ITEMS -->
+    <!-- ========================= -->
+
+    <div class="n2t-items">
+        <f:for each="{items}" as="item">
+
+            <div class="n2t-item">
+
+                <!-- Item header -->
+                <f:if condition="{item.data.header}">
+                    <h3 class="item-header">
+                        {item.data.header}
+                    </h3>
+                </f:if>
+
+                <!-- Item bodytext -->
+                <f:if condition="{item.data.bodytext}">
+                    <div class="item-bodytext">
+                        <f:format.html>
+                            {item.data.bodytext}
+                        </f:format.html>
+                    </div>
+                </f:if>
+
+            </div>
+
+        </f:for>
+    </div>
+
+</div>
+
+
+
+</html>

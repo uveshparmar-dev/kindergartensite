@@ -1,0 +1,9 @@
+name: net2typo/test
+typeName: net2typo_test
+group: default
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true

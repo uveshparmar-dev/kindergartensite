@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  Net2Typo\StudentMgmt\:
+    resource: '../Classes/*'
+
+  Net2Typo\StudentMgmt\Controller\:
+    resource: '../Classes/Controller/*'
+    public: true
+
+  Net2Typo\StudentMgmt\Domain\Repository\:
+    resource: '../Classes/Domain/Repository/*'

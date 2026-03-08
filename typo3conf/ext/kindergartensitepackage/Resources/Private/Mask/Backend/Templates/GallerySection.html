@@ -1,0 +1,58 @@
+<f:if condition="{data}">
+
+    <div class="mask-backend-preview">
+
+        <strong>Gallery Section</strong>
+        <hr>
+
+        <!-- GALLERY HEADING -->
+        <f:if condition="{data.tx_mask_gallery}">
+            <strong>Heading:</strong><br>
+            <f:format.stripTags>
+                {data.tx_mask_gallery}
+            </f:format.stripTags>
+            <br><br>
+        </f:if>
+
+        <!-- IMAGE COUNT -->
+        <f:if condition="{data.tx_mask_gallery_image}">
+            <strong>Total Images:</strong>
+            {data.tx_mask_gallery_image -> f:count()}
+            <br><br>
+        </f:if>
+
+        <!-- IMAGE PREVIEW -->
+        <f:if condition="{data.tx_mask_gallery_image}">
+            <strong>Image Preview:</strong>
+            <br><br>
+
+            <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                <f:for each="{data.tx_mask_gallery_image}" as="file">
+                    <div style="width:120px; text-align:center;">
+                        <f:media
+                            file="{file}"
+                            width="120"
+                            height="120"
+                            alt="{file.alternative}"
+                        />
+                    </div>
+                </f:for>
+            </div>
+
+            <br>
+        </f:if>
+
+        <!-- GALLERY LINK -->
+        <f:if condition="{data.tx_mask_gallery_link}">
+            <strong>Gallery Link:</strong><br>
+            {data.tx_mask_gallery_link}
+            <br><br>
+        </f:if>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{data} == 0">
+    <em>No gallery content added yet.</em>
+</f:if>

@@ -1,0 +1,58 @@
+name: net2typo/events
+typeName: net2typo_events
+group: default
+prefixFields: true
+prefixType: full
+
+fields:
+
+  -
+    identifier: header
+    useExistingField: true
+    label: Section Heading
+
+  -
+    identifier: right_image
+    type: File
+    label: Right Side Image
+    maxitems: 1
+
+  -
+    identifier: event_items
+    type: Collection
+    label: Event Items
+    appearance:
+      collapseAll: true
+
+    fields:
+
+      -
+        identifier: event_day
+        type: Text
+        label: Day
+
+      -
+        identifier: event_month
+        type: Text
+        label: Month
+
+      -
+        identifier: event_title
+        type: Text
+        label: Event Title
+
+      -
+        identifier: event_time
+        type: Text
+        label: Event Time
+
+      -
+        identifier: event_link
+        type: Link
+        label: Event Link
+
+      -
+        identifier: arrow_icon
+        type: File
+        label: Arrow Icon
+        maxitems: 10

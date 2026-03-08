@@ -1,0 +1,96 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<h2 style="text-align:center; margin:40px 0;">Edit Student</h2>
+
+<div style="max-width:600px; margin:0 auto;">
+
+    <f:form action="update" object="{student}" name="student" enctype="multipart/form-data">
+
+        <!-- FIRST NAME -->
+        <div style="margin-bottom:20px;">
+            <label>First Name</label><br>
+            <f:form.textfield property="firstName" style="width:100%; padding:10px;" />
+        </div>
+
+        <!-- LAST NAME -->
+        <div style="margin-bottom:20px;">
+            <label>Last Name</label><br>
+            <f:form.textfield property="lastName" style="width:100%; padding:10px;" />
+        </div>
+
+        <!-- EMAIL -->
+        <div style="margin-bottom:20px;">
+            <label>Email</label><br>
+            <f:form.textfield property="email" style="width:100%; padding:10px;" />
+        </div>
+
+        <!-- COLOR PICKER -->
+        <div style="margin-bottom:20px;">
+            <label>Color</label><br>
+            <f:form.textfield property="color" type="color" style="width:40%; height:45px;" />
+        </div>
+
+        <!-- IMAGE UPLOAD -->
+        <div style="margin-bottom:20px;">
+            <label>Upload New Image</label><br>
+            <f:form.upload id="image-picker" property="image" style="width:100%; padding:8px;" />
+        </div>
+
+        <!-- NEW LIVE PREVIEW CONTAINER (With Clear Button) -->
+        <div id="live-preview-container" style="display:none; margin-bottom:25px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
+                <label>New Image Preview</label>
+                <button type="button" id="clear-image" style="background:#ff4444; color:white; border:none; border-radius:4px; padding:2px 8px; font-size:11px; cursor:pointer;">✕ Clear</button>
+            </div>
+            <div style="width:160px; height:120px; overflow:hidden; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2); border: 2px solid #000;">
+                <img id="live-preview-img" src="#" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </div>
+        </div>
+
+        <!-- CURRENT IMAGE PREVIEW -->
+        <f:if condition="{student.image}">
+            <div id="current-image-container" style="margin-bottom:25px;">
+                <label>Current Image</label><br>
+                <div style="width:160px; height:120px; overflow:hidden; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+                    <f:image image="{student.image}" width="160" height="120" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                </div>
+            </div>
+        </f:if>
+
+        <!-- SUBMIT -->
+        <div>
+            <f:form.submit value="Update Student" style="padding:12px 22px; background:black; color:white; border:none; border-radius:6px; font-weight:600; margin-bottom:50px;" />
+        </div>
+
+    </f:form>
+
+</div>
+
+<!-- UPDATED JAVASCRIPT -->
+<script>
+    const imagePicker = document.getElementById('image-picker');
+    const previewContainer = document.getElementById('live-preview-container');
+    const previewImg = document.getElementById('live-preview-img');
+    const clearBtn = document.getElementById('clear-image');
+    const currentImg = document.getElementById('current-image-container');
+
+    // Handle Image Selection
+    imagePicker.onchange = evt => {
+        const [file] = imagePicker.files;
+        if (file) {
+            previewContainer.style.display = 'block';
+            previewImg.src = URL.createObjectURL(file);
+            if (currentImg) { currentImg.style.opacity = '0.3'; }
+        }
+    }
+
+    // Handle Clear Selection
+    clearBtn.onclick = () => {
+        imagePicker.value = ""; // Resets the actual file input
+        previewContainer.style.display = 'none';
+        previewImg.src = "#";
+        if (currentImg) { currentImg.style.opacity = '1'; }
+    }
+</script>
+
+</html>

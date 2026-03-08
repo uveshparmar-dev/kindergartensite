@@ -1,0 +1,38 @@
+base: 'http://localhost/uvesh.t3template/'
+dependencies:
+  - mask/mask
+  - georgringer/news
+  - typo3/form
+  - typo3/indexed-search
+  - in2code/powermail-dropin-main
+  - in2code/powermail-dropin-marketing
+  - in2code/powermail-dropin-styling
+  - in2code/powermail-main
+  - in2code/powermail-marketing
+  - in2code/powermail-styling
+  - net2typo/kindergartensitepackage
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: 0
+    base: /
+    locale: en_US.UTF-8
+    navigationTitle: English
+    flag: us
+rootPageId: 3
+routes:
+  -
+    route: robots.txt
+    type: staticText
+    content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3_src/\r\nDisallow: /fileadmin/user_upload/_temp_/importexport\r\n# Uncomment the following line if you have a sitemap enabled. Replace the domain with your own.\r\n# Sitemap: https://www.example.org/sitemap.xml\r\n"
+settings:
+  page.navigation.logo.file: 'EXT:kindergartensitepackage/Resources/Public/Icons/main-logo.svg'
+  page.navigation.logo.alt: 'Kindergarten Logo'
+solr_enabled_read: true
+solr_host_read: localhost
+solr_path_read: /
+solr_port_read: '8983'
+solr_scheme_read: ''
+solr_use_write_connection: false
+websiteTitle: ''

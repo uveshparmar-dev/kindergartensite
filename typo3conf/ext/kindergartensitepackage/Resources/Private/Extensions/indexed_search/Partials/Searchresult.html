@@ -1,0 +1,70 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:is="http://typo3.org/ns/TYPO3/CMS/IndexedSearch/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="search-result-card">
+
+    <!-- HEADER: TITLE + PERCENT -->
+    <div class="search-result-header">
+        <h3 class="result-title">
+           
+            <a href="{row.url}">
+                {row.title -> f:format.raw()}
+            </a>
+        </h3>
+
+        <span class="result-score">
+            {is:searchResult.rating(firstRow: firstRow, sortOrder: searchParams.sortOrder, row: row)}
+        </span>
+    </div>
+
+   
+    <f:if condition="{row.headerOnly} == 0">
+        <p class="result-excerpt">
+            {row.description -> f:format.raw()}
+        </p>
+
+        <div class="result-meta">
+            <span>
+                <strong>Size:</strong> {row.size}
+            </span>
+
+            <span>
+                <strong>Created:</strong>
+                <f:format.date>@{row.created}</f:format.date>
+            </span>
+
+            <span>
+                <strong>Modified:</strong>
+                <f:format.date>@{row.modified}</f:format.date>
+            </span>
+
+            
+            <span class="meta-path">
+                <strong>Path:</strong>
+                <a href="{row.url}">
+                   {row.title -> f:format.raw()}
+                </a>
+            </span>
+
+        </div>
+    </f:if>
+
+    
+    <f:if condition="{row.headerOnly} == 1">
+        <p class="result-excerpt">
+            {row.description -> f:format.raw()}
+        </p>
+    </f:if>
+
+  
+    <f:if condition="{row.subresults}">
+        <div class="search-subresults">
+            <f:for each="{row.subresults.items}" as="subrow">
+                <f:render partial="Searchresult" arguments="{row: subrow}" />
+            </f:for>
+        </div>
+    </f:if>
+
+</div>
+
+</html>

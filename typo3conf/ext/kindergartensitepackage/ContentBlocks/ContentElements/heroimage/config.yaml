@@ -1,0 +1,24 @@
+name: net2typo/heroimage
+typeName: net2typo_heroimage
+group: default
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true
+  -
+    identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+  -
+    identifier: image
+    useExistingField: true
+  -
+    identifier: herolinks
+    type: Link
+    label: Link
+  -
+    identifier: subheader
+    useExistingField: true
+    label: Button Text

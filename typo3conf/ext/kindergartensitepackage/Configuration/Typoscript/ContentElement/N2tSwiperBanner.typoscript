@@ -1,0 +1,44 @@
+# CType:n2tswiperbanner
+tt_content.n2tswiperbanner =< lib.contentElement
+tt_content.n2tswiperbanner {
+    templateName = N2tSwiperBanner
+
+    dataProcessing {
+
+        # Optional FlexForm
+        10 = BK2K\BootstrapPackage\DataProcessing\FlexFormProcessor
+
+        # SWIPER ITEMS
+        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        20 {
+            table = tx_kindergartensitepackage_n2tswiperbanner_item
+            pidInList.field = pid
+
+            where {
+                data = field:uid
+                intval = 1
+                wrap = tt_content=|
+            }
+
+            orderBy = sorting
+            as = items
+            selectFields = *
+
+            dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references.table = tx_kindergartensitepackage_n2tswiperbanner_item
+                    references.fieldName = icon_file
+                    as = images
+                }
+            }
+        }
+
+        # 🔥 FLOATING ICONS (THIS WAS MISSING)
+        30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        30 {
+            references.fieldName = floating_icons_images
+            as = floatingIcons
+        }
+    }
+}

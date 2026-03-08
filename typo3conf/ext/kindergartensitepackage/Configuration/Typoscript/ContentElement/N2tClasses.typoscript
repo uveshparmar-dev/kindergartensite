@@ -1,0 +1,33 @@
+tt_content.classes =< lib.contentElement
+tt_content.classes {
+    templateName = N2tClasses
+
+    dataProcessing {
+
+
+        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        20 {
+            table = tx_kindergartensitepackage_n2tclasses_item
+            pidInList.field = pid
+
+            where {
+                data = field:uid
+                intval = 1
+                wrap = tt_content=|
+            }
+
+            orderBy = sorting
+            as = items
+            selectFields = *
+
+            dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references.table = tx_kindergartensitepackage_n2tclasses_item
+                    references.fieldName = icon_file
+                    as = images
+                }
+            }
+        }
+    }
+}

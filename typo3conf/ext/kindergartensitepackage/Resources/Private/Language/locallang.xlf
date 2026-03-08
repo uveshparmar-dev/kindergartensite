@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages">
+    <body>
+
+      <!-- =============================== -->
+      <!-- LOGO SETTINGS -->
+      <!-- =============================== -->
+
+      <trans-unit id="settings.logo">
+        <source>Logo File</source>
+      </trans-unit>
+
+      <trans-unit id="settings.logo.description">
+        <source>Upload or select the logo for the frontend</source>
+      </trans-unit>
+
+      <trans-unit id="settings.logo.alt">
+        <source>Logo Alt Text</source>
+      </trans-unit>
+
+      <trans-unit id="settings.logo.alt.description">
+        <source>Alternative text for the site logo</source>
+      </trans-unit>
+
+      
+      <!-- =============================== -->
+      <!-- HAMBURGER MENU ICON (MOBILE NAV) -->
+      <!-- =============================== -->
+
+      <trans-unit id="settings.hamburgerIcon">
+        <source>Hamburger Menu Icon</source>
+      </trans-unit>
+
+      <trans-unit id="settings.hamburgerIcon.description">
+        <source>Upload or select the hamburger menu icon (mobile navigation)</source>
+      </trans-unit>
+
+      <trans-unit id="settings.hamburgerIcon.alt">
+        <source>Hamburger Icon Alt Text</source>
+      </trans-unit>
+
+      <trans-unit id="settings.hamburgerIcon.alt.description">
+        <source>Alternative text for the hamburger menu icon</source>
+      </trans-unit>
+
+
+      <!-- =============================== -->
+      <!-- TOP BAR TEXT FIELDS -->
+      <!-- =============================== -->
+
+      <trans-unit id="settings.topbar.address">
+        <source>Top Bar Address</source>
+      </trans-unit>
+
+      <trans-unit id="settings.topbar.phone">
+        <source>Top Bar Phone</source>
+      </trans-unit>
+
+
+      <!-- =============================== -->
+      <!-- TOP BAR ICON FIELDS -->
+      <!-- =============================== -->
+
+      <trans-unit id="settings.topbar.icon.address">
+        <source>Address Icon</source>
+      </trans-unit>
+
+      <trans-unit id="settings.topbar.icon.phone">
+        <source>Phone Icon</source>
+      </trans-unit>
+
+      <trans-unit id="settings.topbar.icon.facebook">
+        <source>Facebook Icon</source>
+      </trans-unit>
+
+      <trans-unit id="settings.topbar.icon.instagram">
+        <source>Instagram Icon</source>
+      </trans-unit>
+
+      <trans-unit id="settings.topbar.icon.twitter">
+        <source>Twitter Icon</source>
+      </trans-unit>
+
+
+      <!-- =============================== -->
+      <!-- TOP BAR SOCIAL URL FIELDS -->
+      <!-- =============================== -->
+
+      <trans-unit id="settings.topbar.facebook">
+        <source>Facebook URL</source>
+      </trans-unit>
+
+      <trans-unit id="settings.topbar.instagram">
+        <source>Instagram URL</source>
+      </trans-unit>
+
+      <trans-unit id="settings.topbar.twitter">
+        <source>Twitter URL</source>
+      </trans-unit>
+
+
+      <!-- =============================== -->
+      <!-- SEARCH ICON (MAIN NAV) -->
+      <!-- =============================== -->
+
+      <trans-unit id="settings.searchIcon">
+        <source>Search Icon File</source>
+      </trans-unit>
+
+      <trans-unit id="settings.searchIcon.description">
+        <source>Upload or select the search icon</source>
+      </trans-unit>
+
+      <trans-unit id="settings.searchIcon.alt">
+        <source>Search Icon Alt Text</source>
+      </trans-unit>
+
+      <trans-unit id="settings.searchIcon.alt.description">
+        <source>Alternative text for the search icon</source>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

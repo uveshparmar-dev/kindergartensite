@@ -1,0 +1,42 @@
+<section id="cta" class="jarallax cta-section breakout" data-speed="0.4">
+
+    <f:for each="{items}" as="item">
+
+        <!-- Background Image -->
+        <f:if condition="{item.images.0}">
+            <div class="jarallax-img"
+                 style="background-image:url('{item.images.0.publicUrl}');">
+            </div>
+        </f:if>
+
+        <div class="container padding-medium">
+            <div class="offset-md-3 col-md-6 text-center">
+                <div class="section-title">
+
+                    <!-- Heading -->
+                    <h2 class="display-4 mb-3 banner-title">
+                        {item.data.header}
+                    </h2>
+
+                    <!-- Description -->
+                    <div class="banner-description">
+                        <f:format.raw>
+                            {item.data.bodytext}
+                        </f:format.raw>
+                    </div>
+
+                    <!-- Button (Always Show If Text Exists) -->
+                    <f:if condition="{item.data.buttontext}">
+                        <a href="{f:if(condition: item.data.button_link, then: item.data.button_link, else: '#')}"
+                           class="btn btn-primary mt-4">
+                            {item.data.buttontext}
+                        </a>
+                    </f:if>
+
+                </div>
+            </div>
+        </div>
+
+    </f:for>
+
+</section>

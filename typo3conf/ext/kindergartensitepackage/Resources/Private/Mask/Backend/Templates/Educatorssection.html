@@ -1,0 +1,73 @@
+<f:if condition="{data}">
+
+    <div class="mask-backend-preview">
+
+        <strong>Teachers / Educators Section</strong>
+        <hr>
+
+        <!-- MAIN HEADING -->
+        <f:if condition="{data.tx_mask_heading}">
+            <strong>Section Heading:</strong><br>
+            <f:format.stripTags>
+                {data.tx_mask_heading}
+            </f:format.stripTags>
+            <br><br>
+        </f:if>
+
+        <!-- TOTAL EDUCATORS -->
+        <f:if condition="{data.tx_mask_educators}">
+            <strong>Total Educators:</strong>
+            {data.tx_mask_educators -> f:count()}
+            <br><br>
+        </f:if>
+
+        <hr>
+
+        <!-- LOOP EDUCATORS -->
+        <f:for each="{data.tx_mask_educators}" as="item" iteration="i">
+
+            <strong>{i.cycle}. Educator</strong><br>
+
+            <!-- NAME -->
+            <f:if condition="{item.tx_mask_name}">
+                <strong>Name:</strong>
+                <f:format.stripTags>
+                    {item.tx_mask_name}
+                </f:format.stripTags>
+                <br>
+            </f:if>
+
+            <!-- JOB TITLE -->
+            <f:if condition="{item.tx_mask_job_}">
+                <strong>Job Title:</strong>
+                <f:format.stripTags>
+                    {item.tx_mask_job_}
+                </f:format.stripTags>
+                <br>
+            </f:if>
+
+            <!-- LINK -->
+            <f:if condition="{item.tx_mask_link}">
+                <strong>Profile Link:</strong>
+                {item.tx_mask_link}
+                <br>
+            </f:if>
+
+            <!-- IMAGE COUNT -->
+            <f:if condition="{item.tx_mask_educator_image}">
+                <strong>Image(s):</strong>
+                {item.tx_mask_educator_image -> f:count()}
+                <br>
+            </f:if>
+
+            <hr>
+
+        </f:for>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{data} == 0">
+    <em>No teacher data added yet.</em>
+</f:if>

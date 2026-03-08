@@ -1,0 +1,103 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section id="events">
+	<div class="container padding-medium">
+		<div class="row flex-md-row-reverse align-items-center">
+
+			<!-- ================= RIGHT SIDE IMAGE ================= -->
+			<f:if condition="{data.right_image.0}">
+				<div class="col-md-6">
+					<div class="imageblock">
+						<div class="animated-border">
+
+							<f:image image="{data.right_image.0}" class="img-fluid rounded-circle" width="500"
+								height="500" />
+
+						</div>
+					</div>
+				</div>
+			</f:if>
+
+			<!-- ================= LEFT SIDE EVENTS ================= -->
+			<div class="col-md-6 pe-lg-5 mt-5 mt-md-0">
+
+				<!-- Section Title -->
+				<f:if condition="{data.header}">
+					<div class="section-title">
+						<h2 class="display-4 mb-5">
+							<f:format.stripTags>{data.header}</f:format.stripTags>
+						</h2>
+					</div>
+				</f:if>
+
+				<!-- Events Loop -->
+				<f:for each="{data.event_items}" as="event">
+
+					<div class="border rounded-3 px-4 py-2 mb-3 me-lg-5 event-box">
+						<div class="row">
+
+							<!-- DAY + MONTH -->
+							<div class="col-2 ps-3">
+								<h2 class="m-0 lh-sm event-title">
+									{event.event_day}
+								</h2>
+								<p class="m-0">
+									{event.event_month}
+								</p>
+							</div>
+
+							<!-- TITLE + TIME + ARROW -->
+							<div class="col-10 d-flex justify-content-between align-items-center">
+
+								<!-- Title + Time -->
+								<f:if condition="{event.event_link}">
+									<f:then>
+										<f:link.typolink parameter="{event.event_link}" class="hover-color">
+											<div>
+												<h2 class="m-0 lh-sm event-title">
+													<f:format.stripTags>{event.event_title}</f:format.stripTags>
+												</h2>
+												<p class="m-0">
+													{event.event_time}
+												</p>
+											</div>
+										</f:link.typolink>
+									</f:then>
+									<f:else>
+										<div>
+											<h2 class="m-0 lh-sm event-title">
+												{event.event_title}
+											</h2>
+											<p class="m-0">
+												{event.event_time}
+											</p>
+										</div>
+									</f:else>
+								</f:if>
+
+								<!-- Arrow -->
+								<f:if condition="{event.event_link}">
+									<f:link.typolink parameter="{event.event_link}" class="arrow-link">
+
+										<f:if condition="{event.arrow_icon.0}">
+											<f:image image="{event.arrow_icon.0}" class="event-arrow" width="25"
+												height="25" />
+										</f:if>
+
+									</f:link.typolink>
+								</f:if>
+
+							</div>
+
+						</div>
+					</div>
+
+				</f:for>
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+</html>

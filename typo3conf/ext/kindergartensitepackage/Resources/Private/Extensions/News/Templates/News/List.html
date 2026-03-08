@@ -1,0 +1,79 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="General" />
+
+<f:section name="content">
+
+
+    <f:if condition="{settings.templateLayout} == 100">
+        <section id="activities" class="bg-gray">
+            <div class="container padding-medium">
+
+                <!-- HEADING -->
+                <h2 class="display-4 text-center mb-5 activities-title">
+                    {contentObjectData.header}
+                </h2>
+
+                <!-- FILTER BUTTONS -->
+                <div class="text-center mb-5">
+                    <button class="filter-button py-2 px-4 me-4 mt-2 mt-md-0 active" data-filter="*">All</button>
+                    <button class="filter-button py-2 px-4 me-4 mt-2 mt-md-0" data-filter=".indoor">Indoor</button>
+                    <button class="filter-button py-2 px-4 me-4 mt-2 mt-md-0" data-filter=".outdoor">Outdoor</button>
+                    <button class="filter-button py-2 px-4 me-4 mt-2 mt-md-0" data-filter=".party">Party</button>
+                    <button class="filter-button py-2 px-4 mt-2 mt-md-0" data-filter=".sports">Sports</button>
+                </div>
+
+                <!-- GRID -->
+                <div class="row isotope-container">
+                    <f:for each="{news}" as="newsItem">
+                        <f:render partial="List/Item" arguments="{newsItem: newsItem, settings: settings}" />
+                    </f:for>
+                </div>
+
+            </div>
+        </section>
+    </f:if>
+
+
+    <f:if condition="{settings.templateLayout} == 200">
+        <section id="news" class="news-section">
+            <div class="container padding-medium">
+
+                <!-- HEADING (section heading, not news title) -->
+                <h2 class="display-4 text-center mb-5">
+                    {contentObjectData.header}
+                </h2>
+
+                <!-- NEWS GRID -->
+                <div class="row">
+                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem">
+                        <f:render partial="List/Item" arguments="{newsItem: newsItem, settings: settings}" />
+                    </f:for>
+                </div>
+
+                <!-- READ ALL NEWS BUTTON (ADDED) -->
+                <div class="text-center">
+                    <f:link.page class="btn btn-primary mt-5">
+                        Read All News
+                    </f:link.page>
+                </div>
+
+                <!-- PAGINATION -->
+                <f:if condition="{pagination.pagination}">
+                    <div class="text-center mt-4">
+                        <f:render partial="List/Pagination" arguments="{
+                        pagination: pagination.pagination,
+                        paginator: pagination.paginator
+                    }" />
+                    </div>
+                </f:if>
+
+            </div>
+        </section>
+    </f:if>
+
+
+</f:section>
+
+</html>

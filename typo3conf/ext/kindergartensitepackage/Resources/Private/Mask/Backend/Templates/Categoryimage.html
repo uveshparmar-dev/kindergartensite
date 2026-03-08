@@ -1,0 +1,38 @@
+<f:if condition="{data.tx_mask_category}">
+    <strong>Categories Section</strong>
+    <br><br>
+
+    <strong>Total Categories:</strong>
+    {data.tx_mask_category -> f:count()}
+
+    <hr>
+
+    <f:for each="{data.tx_mask_category}" as="item" iteration="i">
+        <strong>{i.cycle}. Category</strong><br>
+
+        <f:if condition="{item.tx_mask_text}">
+            <strong>Title:</strong>
+            <f:format.stripTags>
+                {item.tx_mask_text}
+            </f:format.stripTags>
+            <br>
+        </f:if>
+
+        <f:if condition="{item.tx_mask_color}">
+            <strong>Color:</strong> {item.tx_mask_color}
+            <br>
+        </f:if>
+
+        <f:if condition="{item.tx_mask_image}">
+            <strong>Images:</strong>
+            {item.tx_mask_image -> f:count()}
+            <br>
+        </f:if>
+
+        <hr>
+    </f:for>
+</f:if>
+
+<f:if condition="{data.tx_mask_category} == 0">
+    <em>No categories added yet.</em>
+</f:if>

@@ -1,0 +1,38 @@
+tt_content.upcomingevent =< lib.contentElement
+tt_content.upcomingevent {
+    templateName = N2tUpcomingevent
+
+    dataProcessing {
+
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+            references.fieldName = bg_image
+            as = backgroundImages
+        }
+
+        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        20 {
+            table = tx_kindergartensitepackage_n2tupcomingevent_item
+            pidInList.field = pid
+
+            where {
+                data = field:uid
+                intval = 1
+                wrap = tt_content=|
+            }
+
+            orderBy = sorting
+            as = items
+            selectFields = *
+
+            dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references.table = tx_kindergartensitepackage_n2tupcomingevent_item
+                    references.fieldName = icon_file
+                    as = images
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<f:if condition="{data.tx_mask_slider}">
+    <section class="hero-slider swiper slider swiper-fade">
+        <div class="swiper-wrapper">
+
+            <f:for each="{data.tx_mask_slider}" as="slide">
+                <div class="swiper-slide d-flex jarallax position-relative">
+                    <div class="jarallax-img hero-bg"
+                        style="background-image:url('{slide.tx_mask_swiper_image.0.publicUrl}');">
+                    </div>
+                </div>
+            </f:for>
+
+        </div>
+
+        <!-- ✅ MOVE THIS OUTSIDE swiper-wrapper -->
+        <div class="hero-content text-center">
+
+            <f:if condition="{data.tx_mask_slide_text}">
+               
+                    {data.tx_mask_slide_text -> f:format.raw()}
+               
+            </f:if>
+
+            <f:if condition="{data.tx_mask_link}">
+                <a href="{data.tx_mask_link}" class="btn btn-primary mt-3">
+                    ABOUT US
+                </a>
+            </f:if>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+        <div class=" main-slider-button-next swiper-button-next light-color me-md-5"></div>
+        <div class=" main-slider-button-prev swiper-button-prev light-color ms-md-5 "></div>
+    </section>
+</f:if>

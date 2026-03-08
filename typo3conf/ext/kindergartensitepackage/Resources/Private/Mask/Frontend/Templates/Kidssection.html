@@ -1,0 +1,83 @@
+<section id="classes">
+    <div class=" padding-medium">
+
+        <!-- MAIN HEADING FROM BACKEND -->
+        <div class="card-body">
+            <h2 class="display-4 text-center mb-5">
+                {data.tx_mask_heading}
+            </h2>
+        </div>
+
+
+        <!-- SWIPER -->
+        <div class="swiper classes-swiper">
+
+            <div class="swiper-wrapper">
+
+                <f:for each="{data.tx_mask_classes}" as="item">
+                    <div class="swiper-slide">
+                        <div class="card bg-transparent border-0">
+
+                            <!-- IMAGE -->
+                            <div class="zoom-effect rounded-4">
+                                <f:if condition="{item.tx_mask_image}">
+                                    <f:for each="{item.tx_mask_image}" as="file">
+                                        <f:media file="{file}" class="img-fluid" />
+                                    </f:for>
+                                </f:if>
+                            </div>
+
+                            <div class="card-body p-0">
+
+                                <!-- CLASS TITLE -->
+                                <h2 class="mt-3">{item.tx_mask_title}</h2>
+
+                                <div class="card-text">
+                                    <div class="d-flex">
+
+                                        <!-- AGE -->
+                                        <div class="pe-4 border-end border-2">
+                                            <p class="text-primary fw-medium fs-4 m-0">
+                                                {item.tx_mask_age}
+                                            </p>
+
+                                            <p class="m-0 text"> {item.tx_mask_ages}</p>
+
+                                        </div>
+
+                                        <!-- CLASS SIZE -->
+                                        <div class="ps-4 pe-4 border-end border-2">
+                                            <p class="text-primary fw-medium fs-4 m-0">
+                                                {item.tx_mask_class}
+                                            </p>
+                                            <p class="m-0  text"> {item.tx_mask_agess}</p>
+                                        </div>
+
+                                        <!-- PRICING -->
+                                        <div class="ps-4 pe-4">
+                                            <p class="text-primary fw-medium fs-4 m-0">
+                                                {item.tx_mask_clas}
+                                            </p>
+                                            <p class="m-0 text"> {item.tx_mask_classe}</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </f:for>
+
+            </div>
+
+            <!-- PAGINATION DOTS -->
+            <div class="swiper-pagination pt-5 mt-3"></div>
+
+
+
+        </div>
+
+    </div>
+</section>

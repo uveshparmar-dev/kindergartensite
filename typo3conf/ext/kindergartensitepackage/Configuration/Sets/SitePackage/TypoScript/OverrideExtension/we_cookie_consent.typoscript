@@ -1,0 +1,25 @@
+plugin.tx_wecookieconsent_pi1 {
+    view {
+
+        templateRootPaths {
+            0 = EXT:we_cookie_consent/Resources/Private/Templates/
+            20 = EXT:kindergartensitepackage/Resources/Private/Extensions/we_cookie_consent/Templates/
+        }
+
+        partialRootPaths {
+            0 = EXT:we_cookie_consent/Resources/Private/Partials/
+            20 = EXT:kindergartensitepackage/Resources/Private/Extensions/we_cookie_consent/Partials/
+        }
+
+        layoutRootPaths {
+            0 = EXT:we_cookie_consent/Resources/Private/Layouts/
+            20 = EXT:kindergartensitepackage/Resources/Private/Extensions/we_cookie_consent/Layouts/
+        }
+    }
+
+   // _LOCAL_LANG {
+      //  default {
+      //      klaro.consentNotice.description = We Cookie Consent - My custom message with a link to the <a href="%s">Privacy policy</a>.
+      //  }
+   // }
+}

@@ -1,0 +1,106 @@
+<f:if condition="{data}">
+
+    <div class="mask-backend-preview">
+
+        <strong>Classes Section</strong>
+        <hr>
+
+        <!-- SECTION HEADING -->
+        <f:if condition="{data.tx_mask_heading}">
+            <strong>Heading:</strong>
+            <f:format.stripTags>
+                {data.tx_mask_heading}
+            </f:format.stripTags>
+            <br><br>
+        </f:if>
+
+        <!-- TOTAL CLASSES -->
+        <f:if condition="{data.tx_mask_classes}">
+            <strong>Total Classes:</strong>
+            {data.tx_mask_classes -> f:count()}
+            <br><br>
+        </f:if>
+
+        <!-- TABLE HEADER -->
+        <div style="
+            display:flex;
+            font-weight:bold;
+            border-bottom:2px solid #ccc;
+            padding-bottom:6px;
+            margin-bottom:10px;
+        ">
+            <div style="width:120px;">Image</div>
+            <div style="flex:2;">Title</div>
+            <div style="flex:1;">Age</div>
+            <div style="flex:1;">Class Size</div>
+            <div style="flex:1;">Price</div>
+        </div>
+
+        <!-- CLASSES ROWS -->
+        <f:for each="{data.tx_mask_classes}" as="item">
+
+            <div style="
+                display:flex;
+                align-items:center;
+                border-bottom:1px solid #eee;
+                padding:8px 0;
+            ">
+
+                <!-- IMAGE -->
+                <div style="width:120px;">
+                    <f:if condition="{item.tx_mask_image}">
+                        <f:for each="{item.tx_mask_image}" as="file" iteration="i">
+                            <f:if condition="{i.isFirst}">
+                                <f:media
+                                    file="{file}"
+                                    width="100"
+                                    height="70"
+                                    alt="{file.alternative}"
+                                />
+                            </f:if>
+                        </f:for>
+                    </f:if>
+                </div>
+
+                <!-- TITLE -->
+                <div style="flex:2;">
+                    <f:format.stripTags>
+                        {item.tx_mask_title}
+                    </f:format.stripTags>
+                </div>
+
+                <!-- AGE -->
+                <div style="flex:1;">
+                    {item.tx_mask_age}
+                    <f:if condition="{item.tx_mask_ages}">
+                        <br><small>{item.tx_mask_ages}</small>
+                    </f:if>
+                </div>
+
+                <!-- CLASS SIZE -->
+                <div style="flex:1;">
+                    {item.tx_mask_class}
+                    <f:if condition="{item.tx_mask_agess}">
+                        <br><small>{item.tx_mask_agess}</small>
+                    </f:if>
+                </div>
+
+                <!-- PRICE -->
+                <div style="flex:1;">
+                    {item.tx_mask_clas}
+                    <f:if condition="{item.tx_mask_classe}">
+                        <br><small>{item.tx_mask_classe}</small>
+                    </f:if>
+                </div>
+
+            </div>
+
+        </f:for>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{data} == 0">
+    <em>No classes added yet.</em>
+</f:if>

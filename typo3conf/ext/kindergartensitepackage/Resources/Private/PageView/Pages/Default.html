@@ -1,0 +1,17 @@
+<f:layout name="Default"/>
+
+<f:section name="Main">
+
+    <!-- BANNER (colPos 0) -->
+    <f:if condition="{content.banner.records}">
+        <f:render partial="Content" arguments="{records: content.banner.records}" />
+    </f:if>
+
+    <!-- MAIN CONTENT (colPos 1) -->
+    <f:if condition="{content.maincontent.records}">
+        <div class="container">
+            <f:render partial="Content" arguments="{records: content.maincontent.records}" />
+        </div>
+    </f:if>
+
+</f:section>

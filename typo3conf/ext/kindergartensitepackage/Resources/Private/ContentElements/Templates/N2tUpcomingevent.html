@@ -1,0 +1,90 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section id="events">
+    <div class="container padding-medium">
+        <div class="row flex-md-row-reverse align-items-center">
+
+            <!-- RIGHT SIDE : IMAGE (from tt_content bg_image) -->
+            <div class="col-md-6">
+                <div class="imageblock">
+                    <div class="animated-border">
+
+                        <f:if condition="{backgroundImages}">
+                            <f:for each="{backgroundImages}" as="image">
+                                <img src="{image.publicUrl}" class="img-fluid rounded-circle" alt="Event Image" />
+                            </f:for>
+                        </f:if>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEFT SIDE : EVENTS LIST -->
+            <div class="col-md-6 pe-lg-5 mt-5 mt-md-0">
+
+                <!-- Section Title -->
+                <div class="section-title">
+                    <f:if condition="{data.header}">
+                        <h2 class="display-4 mb-5">
+                            {data.header}
+                        </h2>
+                    </f:if>
+                </div>
+
+                <!-- Events Loop -->
+                <f:for each="{items}" as="item">
+
+                    <div class="border rounded-3 px-4 py-2 mb-3 me-lg-5 event-box">
+                        <div class="row">
+
+                            <!-- Day + Month -->
+                            <div class="col-2 ps-3">
+                                <h2 class="m-0 lh-sm event-title">
+                                    {item.data.day}
+                                </h2>
+                                <p class="m-0">
+                                    {item.data.month}
+                                </p>
+                            </div>
+
+                            <!-- Title + Time + Arrow -->
+                            <div class="col-10 d-flex justify-content-between align-items-center">
+
+                                <f:if condition="{item.data.link}">
+                                    <f:link.typolink parameter="{item.data.link}"
+                                        class="hover-color d-flex justify-content-between align-items-center w-100">
+
+                                        <!-- Title + Time -->
+                                        <div>
+                                            <h2 class="m-0 lh-sm event-title">
+                                                {item.data.title}
+                                            </h2>
+                                            <p class="m-0">
+                                                {item.data.time}
+                                            </p>
+                                        </div>
+
+                                        <!-- Arrow -->
+                                        <f:if condition="{item.images}">
+                                            <f:for each="{item.images}" as="icon">
+                                                <img src="{icon.publicUrl}" class="event-arrow" width="25"
+                                                    alt="Arrow" />
+                                            </f:for>
+                                        </f:if>
+
+                                    </f:link.typolink>
+                                </f:if>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </f:for>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+</html>

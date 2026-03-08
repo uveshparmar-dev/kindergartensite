@@ -1,0 +1,79 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tteacher_item}">
+
+    <div>
+
+        <!-- Total Count -->
+        <p>
+            <strong>Total Teachers:</strong>
+            {record.tx_kindergartensitepackage_n2tteacher_item -> f:count()}
+        </p>
+
+        <!-- Table -->
+        <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+
+            <thead>
+                <tr style="border-bottom:1px solid #ccc;">
+                    <th align="left" style="padding:8px 0;">Image</th>
+                    <th align="left" style="padding:8px 0;">Teacher Name</th>
+                    <th align="left" style="padding:8px 0;">Designation</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <f:for each="{record.tx_kindergartensitepackage_n2tteacher_item}" as="item">
+
+                    <tr style="border-bottom:1px solid #e5e5e5;">
+
+                        <!-- Image -->
+                        <td style="padding:10px 0; width:100px;">
+                            <f:if condition="{item.icon_file}">
+                                <f:for each="{item.icon_file}" as="file" iteration="iterator">
+                                    <f:if condition="{iterator.isFirst}">
+                                        <be:link.editRecord
+                                            table="tx_kindergartensitepackage_n2tteacher_item"
+                                            uid="{item.uid}">
+                                            <f:image image="{file}" width="70c" height="70c" />
+                                        </be:link.editRecord>
+                                    </f:if>
+                                </f:for>
+                            </f:if>
+                        </td>
+
+                        <!-- Name -->
+                        <td>
+                            <be:link.editRecord
+                                table="tx_kindergartensitepackage_n2tteacher_item"
+                                uid="{item.uid}">
+                                <strong>{item.header}</strong>
+                            </be:link.editRecord>
+                        </td>
+
+                        <!-- Designation -->
+                        <td>
+                            <be:link.editRecord
+                                table="tx_kindergartensitepackage_n2tteacher_item"
+                                uid="{item.uid}">
+                                {item.bodytext}
+                            </be:link.editRecord>
+                        </td>
+
+                    </tr>
+
+                </f:for>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</f:if>
+
+<f:if condition="{record.tx_kindergartensitepackage_n2tteacher_item -> f:count()} == 0">
+    <em style="color:#999;">No Teacher items added yet.</em>
+</f:if>
+
+</html>

@@ -1,0 +1,22 @@
+mod.wizards.newContentElement.wizardItems.common{
+      header = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_db.xlf:n2telement
+    elements {
+        n2tswiperbanner {
+            iconIdentifier = content-text
+            title = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_db.xlf:kindergartensitepackage.n2tswiperbanner
+            description = LLL:EXT:kindergartensitepackage/Resources/Private/Language/locallang_db.xlf:kindergartensitepackage.n2tswiperbanner.description
+            tt_content_defValues {
+                CType = n2tswiperbanner
+            }
+        }
+    }
+    show := addToList(n2tswiperbanner)
+}
+
+
+# Backend preview
+mod.web_layout.tt_content{
+    preview {
+         n2tswiperbanner = EXT:kindergartensitepackage/Resources/Private/ContentElements/Templates/Preview/N2tSwiperBanner.html
+    }
+}
